@@ -1,0 +1,125 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				// #ifdef H5
+				"navigationStyle": "custom",
+				// #endif 
+				"navigationBarTitleText": "排版展示"
+				
+			}
+		},
+		{
+			"path": "pages/specialEffect/largen",
+			"style": {
+				"navigationBarTitleText": "变大",
+				// #ifdef H5
+				"navigationStyle": "custom",
+				// #endif 
+				"app-plus": {
+					// #ifdef MP-WEIXIN
+					"titleNView": {
+						"type": "transparent"
+					}
+					// #endif 
+				}
+			}
+		},
+		{
+			"path": "pages/specialEffect/popUp",
+			"style": {
+				"navigationBarTitleText": "弹出",
+				// #ifdef H5
+				"navigationStyle": "custom",
+				// #endif 
+				"app-plus": {
+					// #ifdef MP-WEIXIN
+					"titleNView": {
+						"type": "transparent"
+					}
+					// #endif 
+				}
+			}
+		},
+		{
+			"path": "pages/specialEffect/firework",
+			"style": {
+				"navigationBarTitleText": "烟花",
+				// #ifdef H5
+				"navigationStyle": "custom",
+				// #endif 
+				"app-plus": {
+					// #ifdef MP-WEIXIN
+					"titleNView": {
+						"type": "transparent"
+					}
+					// #endif 
+				}
+			}
+		},
+		{
+			"path": "pages/specialEffect/wave",
+			"style": {
+				"navigationBarTitleText": "波浪",
+				// #ifdef H5
+				"navigationStyle": "custom",
+				// #endif 
+				"app-plus": {
+					// #ifdef MP-WEIXIN
+					"titleNView": {
+						"type": "transparent"
+					}
+					// #endif 
+				}
+			}
+		},
+		{
+			"path": "pages/function/list",
+			"style": {
+				"navigationBarTitleText": "功能列表",
+				// #ifdef H5
+				"navigationStyle": "custom",
+				// #endif 
+				"app-plus": {
+					// #ifdef MP-WEIXIN
+					"titleNView": {
+						"type": "transparent"
+					}
+					// #endif 
+				}
+			}
+		}
+		
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"selectedColor": "#1296db",
+		"list": [{
+				"text": "首页",
+				"pagePath": "pages/index/index",
+				"iconPath": "static/logo.png",
+				"selectedIconPath": "static/logo.png"
+			},
+			{
+				"pagePath": "pages/specialEffect/wave",
+				"text": "特效展示",
+				"iconPath": "static/logo.png",
+				"selectedIconPath": "static/logo.png"
+			},
+			{
+				"pagePath": "pages/function/list",
+				"text": "功能展示",
+				"iconPath": "static/logo.png",
+				"selectedIconPath": "static/logo.png"
+			}
+			
+		]
+	
+	}
+}

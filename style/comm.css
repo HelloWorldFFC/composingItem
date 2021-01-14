@@ -1,0 +1,223 @@
+page,
+.cf-content {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		background-color: #F0F0F0;
+}
+.cf-bottomCenter{
+		width: 100%;
+		text-align: center;
+		margin-bottom: 40upx;
+		margin-top: 40upx;
+}
+.cf-scrollBox {
+		width: 100%;
+		height: 100%;
+		background-color: #F0F0F0;
+}
+.rightBottomBox{
+	position: fixed;
+	bottom: 140upx;
+	right: 30upx;
+	padding-top: 4upx;
+	padding-left: 10upx;
+	z-index: 997;
+}
+
+.cf-unitTable{
+	width: 40upx;
+	height: 80upx;
+}
+.cf-huangjin{
+	color: #000;
+	background-color: #F0E68C;
+}
+.cf-biaopu500{
+	color: #FFFFFF;
+	background-color: #1296db;
+}
+.cf-hushen300{
+	color: #FFFFFF;
+	
+	background-color: #DC143C;
+}
+.cf-cpi{
+	color: #FFFFFF;
+	background-color: #7CFC00;
+}
+.cf-homePrice{
+	color: #FFFFFF;
+	background-color: #AFEEEE;
+	
+}
+.cf-qizhaiIndex{
+	color: #FFFFFF;
+	
+	background-color: #DAA520;
+	
+}
+.cf-timedeposit{
+	color: #FFFFFF;
+	
+	background-color: #9400D3;
+}
+.cf-yuanyou{
+	color: #FFFFFF;
+	background-color: #808080;
+}
+
+
+
+.cf-colorHui{
+	color: #D3D3D3;
+}
+.cf-colorTheme{
+	color: #1296db;
+}
+.cf-colorEdit{
+	color: #DC143C;
+}
+.cf-colorRed{
+	color: #DC143C;
+}
+.cf-colorRili{
+	color: #F0E68C;
+}
+
+.cf-bgcolorTheme{
+	background-color: #1296db;
+	color:  #FFFFFF;
+}
+
+.cf-size-l{
+	font-size: 30upx;
+}
+.cf-size-lg{
+	font-size: 40upx;
+}
+.cf-size-lgs{
+	font-size: 50upx;
+}
+.cf-size-lgg{
+	font-size: 60upx;
+}
+.cf-size-lggs{
+	font-size: 70upx;
+}
+.cf-ptop-s{
+	padding-top: 10upx;
+}
+.cf-ptop-m{
+	padding-top: 20upx;
+}
+.cf-ptop-l{
+	padding-top: 30upx;
+}
+.cf-ptop-lg{
+	padding-top: 40upx;
+}
+.cf-ptop-lgg{
+	padding-top: 60upx;
+}
+.cf-pbottom-s{
+	padding-bottom: 10upx;
+}
+.cf-pbottom-m{
+	padding-bottom: 20upx;
+}
+.cf-pbottom-l{
+	padding-bottom: 30upx;
+}
+.cf-pbottom-lg{
+	padding-bottom: 40upx;
+}
+.cf-pbottom-lgg{
+	padding-bottom: 60upx;
+}
+.cf-pleft-s{
+	padding-left: 10upx;
+}
+.cf-pleft-m{
+	padding-left: 20upx;
+}
+.cf-pleft-l{
+	padding-left: 30upx;
+}
+.cf-pleft-lg{
+	padding-left: 40upx;
+}
+.cf-pleft-lgg{
+	padding-left: 60upx;
+}
+.cf-pright-s{
+	padding-right: 10upx;
+}
+.cf-pright-m{
+	padding-right: 20upx;
+}
+.cf-pright-l{
+	padding-right: 30upx;
+}
+.cf-pright-lg{
+	padding-right: 50upx;
+}
+.cf-pright-lgg{
+	padding-right: 70upx;
+}
+.cf-hengCenter{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+.cf-hengStart{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+}
+.cf-hengStartEnd{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-end;
+	width: 100%;
+	
+}
+.cf-hengStartS{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+}
+.cf-hengSpace-B{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+.cf-shuCenter{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+.cf-shuStartS{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+}
+.cf-p-s{
+	padding: 10upx 6upx;
+}
+.cf-p-m{
+	padding: 20upx 16upx;
+}

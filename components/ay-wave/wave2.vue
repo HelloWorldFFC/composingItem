@@ -1,0 +1,244 @@
+<template>
+	<view class="circle">
+	    <view class="c1"></view>
+	    <view class="c2"></view>
+	    <view class="c3"></view>
+	</view>
+</template>
+
+<script>
+</script>
+
+<style lang="scss">
+	body {
+		background: gold;
+	}
+
+	.circle {
+		position: absolute;
+		left: 0;
+		top: 100upx;
+		right: 0;
+		margin: 0 auto;
+		width: 90px;
+		height: 90px
+	}
+
+	.circle view {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		background: #fff;
+		width: 90px;
+		height: 90px;
+		margin-left: -45px;
+		margin-top: -45px;
+		opacity: 1;
+		border-radius: 90px;
+		animation: 1.2s linear infinite;
+		-webkit-animation: 1.2s linear infinite;
+		-ms--webkit-animation: 1.2s linear infinite;
+		-moz--webkit-animation: 1.2s linear infinite;
+		-o--webkit-animation: 1.2s linear infinite;
+	}
+
+	.circle view.c1 {
+		width: 20px;
+		height: 20px;
+		margin-left: -10px;
+		margin-top: -10px;
+		opacity: 1;
+		border-radius: 90px
+	}
+
+	.circle view.c2 {
+		-webkit-animation-name: c2;
+		-webkit-animation-delay: .6s;
+		-ms-animation-name: c2;
+		-ms-animation-delay: .6s;
+		-moz-animation-name: c2;
+		-moz-animation-delay: .6s;
+		-o-animation-name: c2;
+		-o-animation-delay: .6s;
+		animation-name: c2;
+		animation-delay: .6s;
+	}
+
+	.circle view.c3 {
+		-webkit-animation-name: c2;
+		-webkit-animation-delay: 1.2s;
+		-ms-animation-name: c2;
+		-ms-animation-delay: 1.2s;
+		-moz-animation-name: c2;
+		-moz-animation-delay: 1.2s;
+		-o-animation-name: c2;
+		-o-animation-delay: 1.2s;
+		animation-name: c2;
+		animation-delay: 1.2s;
+	}
+
+	@-webkit-keyframes c2 {
+		0% {
+			-webkit-transform: scale(.222);
+			-ms-transform: scale(.222);
+			-moz-transform: scale(.222);
+			-o-transform: scale(.222);
+			transform: scale(.222);
+			opacity: 1
+		}
+
+		50% {
+			-webkit-transform: scale(.622);
+			-ms-transform: scale(.622);
+			-moz-transform: scale(.622);
+			-o-transform: scale(.622);
+			transform: scale(.622);
+			opacity: .4
+		}
+
+		98% {
+			-webkit-transform: scale(1);
+			-ms-transform: scale(1);
+			-moz-transform: scale(1);
+			-o-transform: scale(1);
+			transform: scale(1);
+			opacity: .2
+		}
+
+		100% {
+			opacity: 0
+		}
+	}
+
+	@-ms-keyframes c2 {
+		0% {
+			-webkit-transform: scale(.222);
+			-ms-transform: scale(.222);
+			-moz-transform: scale(.222);
+			-o-transform: scale(.222);
+			transform: scale(.222);
+			opacity: 1
+		}
+
+		50% {
+			-webkit-transform: scale(.622);
+			-ms-transform: scale(.622);
+			-moz-transform: scale(.622);
+			-o-transform: scale(.622);
+			transform: scale(.622);
+			opacity: .4
+		}
+
+		98% {
+			-webkit-transform: scale(1);
+			-ms-transform: scale(1);
+			-moz-transform: scale(1);
+			-o-transform: scale(1);
+			transform: scale(1);
+			opacity: .2
+		}
+
+		100% {
+			opacity: 0
+		}
+	}
+
+	@-moz-keyframes c2 {
+		0% {
+			-webkit-transform: scale(.222);
+			-ms-transform: scale(.222);
+			-moz-transform: scale(.222);
+			-o-transform: scale(.222);
+			transform: scale(.222);
+			opacity: 1
+		}
+
+		50% {
+			-webkit-transform: scale(.622);
+			-ms-transform: scale(.622);
+			-moz-transform: scale(.622);
+			-o-transform: scale(.622);
+			transform: scale(.622);
+			opacity: .4
+		}
+
+		98% {
+			-webkit-transform: scale(1);
+			-ms-transform: scale(1);
+			-moz-transform: scale(1);
+			-o-transform: scale(1);
+			transform: scale(1);
+			opacity: .2
+		}
+
+		100% {
+			opacity: 0
+		}
+	}
+
+	@-o-keyframes c2 {
+		0% {
+			-webkit-transform: scale(.222);
+			-ms-transform: scale(.222);
+			-moz-transform: scale(.222);
+			-o-transform: scale(.222);
+			transform: scale(.222);
+			opacity: 1
+		}
+
+		50% {
+			-webkit-transform: scale(.622);
+			-ms-transform: scale(.622);
+			-moz-transform: scale(.622);
+			-o-transform: scale(.622);
+			transform: scale(.622);
+			opacity: .4
+		}
+
+		98% {
+			-webkit-transform: scale(1);
+			-ms-transform: scale(1);
+			-moz-transform: scale(1);
+			-o-transform: scale(1);
+			transform: scale(1);
+			opacity: .2
+		}
+
+		100% {
+			opacity: 0
+		}
+	}
+
+	@keyframes c2 {
+		0% {
+			-webkit-transform: scale(.222);
+			-ms-transform: scale(.222);
+			-moz-transform: scale(.222);
+			-o-transform: scale(.222);
+			transform: scale(.222);
+			opacity: 1
+		}
+
+		50% {
+			-webkit-transform: scale(.622);
+			-ms-transform: scale(.622);
+			-moz-transform: scale(.622);
+			-o-transform: scale(.622);
+			transform: scale(.622);
+			opacity: .4
+		}
+
+		98% {
+			-webkit-transform: scale(1);
+			-ms-transform: scale(1);
+			-moz-transform: scale(1);
+			-o-transform: scale(1);
+			transform: scale(1);
+			opacity: .2
+		}
+
+		100% {
+			opacity: 0
+		}
+	}
+</style>
