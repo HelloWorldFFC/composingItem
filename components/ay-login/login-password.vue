@@ -42,7 +42,24 @@
 				type: String,
 				default: '',
 			},
-			
+			username_init: {
+				type: String,
+				default: '',
+			},
+			password_init: {
+				type: String,
+				default: '',
+			},
+			isRemeber_init: {
+				type: Boolean,
+				default: true
+			},
+		},
+		created:function(){
+			let that = this;
+			that.username = that.username_init ;
+			that.password = that.password_init ;
+			that.isRemeber = that.isRemeber_init ;
 		},
 		computed: {
 			style_xuan() {

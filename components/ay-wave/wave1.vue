@@ -1,11 +1,9 @@
 <template>
-	<view>
-		<view class="animate wave" :style="style_size">
-			<view class="w1" :style="style_color"></view>
-			<view class="w2" :style="style_color"></view>
-			<view class="w3" :style="style_color"></view>
-			<view class="w4" :style="style_color"></view>
-		</view>
+	<view class="animate wave" :style="style_size">
+		<view class="w1" :style="style_color"></view>
+		<view class="w2" :style="style_color"></view>
+		<view class="w3" :style="style_color"></view>
+		<view class="w4" :style="style_color"></view>
 	</view>
 </template>
 
@@ -72,15 +70,8 @@
 </script>
 
 <style lang="scss">
-	// html {
-	// 	font-size: 20px;
-	// }
-
-	// body {
-	// 	background: #444;
-	// }
-
-	@-webkit-keyframes opac {
+	// @-webkit-keyframes
+	@keyframes opac {
 		from {
 			opacity: 1;
 			width: 0;

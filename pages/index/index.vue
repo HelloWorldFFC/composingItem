@@ -4,7 +4,7 @@
 			<!-- <banner :list="bannerList" :themeColor="themeColor"></banner>
 			
 			<shortcutNav :list="shortcutNavList" :hengNumber="4"></shortcutNav> -->
-<search style="background-color: #FFFFFF;" preholder="搜索附近位置" :isToAll="true" :themeColor="themeColor" @toSearch="toSearchFun" @toAll="toAllFun"></search>
+
 			<view class="topBox">
 				<banner :list="bannerList" :themeColor="themeColor" @toDetailPage="toDetailPage"></banner>
 				<view class="topNavBox NavBox">
@@ -84,7 +84,7 @@
 	import shortcutNav from '@/components/ay-shortcutNav/shortcutNav.vue';
 
 
-	import goUpNotice from '@/components/notice-goUp/notice-goUp.vue';
+	import goUpNotice from '@/components/ay-notice-goUp/notice-goUp.vue';
 
 	import underscore from '@/components/ay-nav/underscore.vue';
 

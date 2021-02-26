@@ -3,7 +3,7 @@
 
 		<view class="box-item" :style="{width: itemWidth +'%' }" @click="toDetailPage({index: index,id:item.id})" v-for="(item, index) in list"
 		 :key="index">
-			<image :src="item.img"></image>
+			<image lazy-load="true" :src="item.img"></image>
 			<text>{{item.name}}</text>
 		</view>
 	</view>

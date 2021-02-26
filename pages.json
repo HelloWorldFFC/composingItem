@@ -11,9 +11,9 @@
 			}
 		},
 		{
-			"path": "pages/specialEffect/largen",
+			"path": "pages/show/show",
 			"style": {
-				"navigationBarTitleText": "变大",
+				"navigationBarTitleText": "展示",
 				// #ifdef H5
 				"navigationStyle": "custom",
 				// #endif 
@@ -27,9 +27,9 @@
 			}
 		},
 		{
-			"path": "pages/specialEffect/popUp",
+			"path": "pages/show/index",
 			"style": {
-				"navigationBarTitleText": "弹出",
+				"navigationBarTitleText": "展示",
 				// #ifdef H5
 				"navigationStyle": "custom",
 				// #endif 
@@ -43,9 +43,9 @@
 			}
 		},
 		{
-			"path": "pages/specialEffect/firework",
+			"path": "pages/show/index_item",
 			"style": {
-				"navigationBarTitleText": "烟花",
+				"navigationBarTitleText": "展示",
 				// #ifdef H5
 				"navigationStyle": "custom",
 				// #endif 
@@ -59,25 +59,9 @@
 			}
 		},
 		{
-			"path": "pages/specialEffect/wave",
+			"path": "pages/user/user",
 			"style": {
-				"navigationBarTitleText": "波浪",
-				// #ifdef H5
-				"navigationStyle": "custom",
-				// #endif 
-				"app-plus": {
-					// #ifdef MP-WEIXIN
-					"titleNView": {
-						"type": "transparent"
-					}
-					// #endif 
-				}
-			}
-		},
-		{
-			"path": "pages/function/list",
-			"style": {
-				"navigationBarTitleText": "功能列表",
+				"navigationBarTitleText": "我的",
 				// #ifdef H5
 				"navigationStyle": "custom",
 				// #endif 
@@ -107,14 +91,14 @@
 				"selectedIconPath": "static/logo.png"
 			},
 			{
-				"pagePath": "pages/specialEffect/wave",
-				"text": "特效展示",
+				"pagePath": "pages/show/index",
+				"text": "展示",
 				"iconPath": "static/logo.png",
 				"selectedIconPath": "static/logo.png"
 			},
 			{
-				"pagePath": "pages/function/list",
-				"text": "功能展示",
+				"pagePath": "pages/user/user",
+				"text": "我的",
 				"iconPath": "static/logo.png",
 				"selectedIconPath": "static/logo.png"
 			}

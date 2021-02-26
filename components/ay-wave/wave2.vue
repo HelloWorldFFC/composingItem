@@ -10,10 +10,6 @@
 </script>
 
 <style lang="scss">
-	body {
-		background: gold;
-	}
-
 	.circle {
 		position: absolute;
 		left: 0;

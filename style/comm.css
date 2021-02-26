@@ -2,8 +2,11 @@ page,
 .cf-content {
 		width: 100%;
 		height: 100%;
-		overflow: hidden;
-		background-color: #F0F0F0;
+		/* overflow: hidden; */ /* 导致没有自动的滚动条 */
+		background-color: #fff;
+}
+.cf-ad{
+	padding: 20upx;
 }
 .cf-bottomCenter{
 		width: 100%;
@@ -14,7 +17,7 @@ page,
 .cf-scrollBox {
 		width: 100%;
 		height: 100%;
-		background-color: #F0F0F0;
+		background-color: #fff;
 }
 .rightBottomBox{
 	position: fixed;
@@ -73,7 +76,7 @@ page,
 	color: #D3D3D3;
 }
 .cf-colorTheme{
-	color: #1296db;
+	color: #33CCCC;
 }
 .cf-colorEdit{
 	color: #DC143C;
@@ -86,7 +89,7 @@ page,
 }
 
 .cf-bgcolorTheme{
-	background-color: #1296db;
+	background-color: #33CCCC;
 	color:  #FFFFFF;
 }
 
@@ -221,3 +224,32 @@ page,
 .cf-p-m{
 	padding: 20upx 16upx;
 }
+.cf-btmC-fixed-box{
+	position: fixed;
+	bottom: 0upx;
+	left: 0;
+	width: 100%;
+}
+.cf-btmC-fixed{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 30upx;
+	margin-top: 30upx;
+}
+.cf-origin-m {
+	text-decoration: underline;
+	color: #0081FF;
+	font-size: 20upx;
+}
+.cf-btn-m-box{
+	text-align: center;
+}
+.cf-btn-m {
+	color: #FFFFFF;
+	width: 80%;
+	border-radius: 68upx;
+	margin: 20upx auto;
+	padding: 20upx;
+	font-size: 40upx;
+}
+
