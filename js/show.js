@@ -121,32 +121,32 @@ const res_home = {
 					type: '',
 					isMenu: true,
 					item: [
-						
+
 						{
-								name: '3d翻转',
-								img: 'https://cdn.pixabay.com/photo/2021/01/24/21/52/grand-canyon-5946657__340.jpg',
-								url: '',
-								type: 'ayturn1',
-							},
-							{
-						
-								name: '手动翻页',
-								img: 'https://cdn.pixabay.com/photo/2016/11/29/06/20/anniversary-1867767__340.jpg',
-								url: '',
-								type: 'ayturn2',
-							},
-							{
-								name: '自动翻页',
-								img: 'https://cdn.pixabay.com/photo/2021/01/26/21/16/macaw-5952965__340.jpg',
-								url: '',
-								type: 'ayturn3',
-							},
-							{
-								name: '单面翻转',
-								img: 'https://cdn.pixabay.com/photo/2020/11/19/15/32/sculpture-5758884__340.jpg',
-								url: '',
-								type: 'ayturn4',
-							},
+							name: '3d翻转',
+							img: 'https://cdn.pixabay.com/photo/2021/01/24/21/52/grand-canyon-5946657__340.jpg',
+							url: '',
+							type: 'ayturn1',
+						},
+						{
+
+							name: '手动翻页',
+							img: 'https://cdn.pixabay.com/photo/2016/11/29/06/20/anniversary-1867767__340.jpg',
+							url: '',
+							type: 'ayturn2',
+						},
+						{
+							name: '自动翻页',
+							img: 'https://cdn.pixabay.com/photo/2021/01/26/21/16/macaw-5952965__340.jpg',
+							url: '',
+							type: 'ayturn3',
+						},
+						{
+							name: '单面翻转',
+							img: 'https://cdn.pixabay.com/photo/2020/11/19/15/32/sculpture-5758884__340.jpg',
+							url: '',
+							type: 'ayturn4',
+						},
 
 					],
 
@@ -158,17 +158,35 @@ const res_home = {
 					type: '',
 					isMenu: true,
 					item: [{
-						name: '生成二维码',
-						img: 'https://cdn.pixabay.com/photo/2021/01/24/21/52/grand-canyon-5946657__340.jpg',
-						url: '',
-						type: 'ayQrcode',
-					}, 
-					{
-						name: '上传凭证',
-						img: 'https://cdn.pixabay.com/photo/2016/11/29/06/20/anniversary-1867767__340.jpg',
-						url: '',
-						type: 'ayImageUpload',
-					}, 
+							name: '生成二维码',
+							img: 'https://cdn.pixabay.com/photo/2021/01/24/21/52/grand-canyon-5946657__340.jpg',
+							url: '',
+							type: 'ayQrcode',
+						},
+						{
+							name: '上传凭证',
+							img: 'https://cdn.pixabay.com/photo/2016/11/29/06/20/anniversary-1867767__340.jpg',
+							url: '',
+							type: 'ayImageUpload',
+						},
+						{
+							name: '下拉选择框',
+							img: 'https://cdn.pixabay.com/photo/2020/04/11/14/42/street-5030692__340.jpg',
+							url: '',
+							type: 'ayDropdownList',
+						},
+						{
+							name: '中部弹出框',
+							img: 'https://cdn.pixabay.com/photo/2019/11/26/03/35/maple-4653495__340.jpg',
+							url: '',
+							type: 'ayPopTips_center',
+						},
+						{
+							name: '底部弹出框',
+							img: 'https://cdn.pixabay.com/photo/2019/11/26/03/35/maple-4653495__340.jpg',
+							url: '',
+							type: 'ayPopTips_bottom',
+						},
 					],
 
 				},

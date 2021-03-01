@@ -35,12 +35,12 @@
 
 		<fireworkSati v-if="is_fkSati&&type=='fireworkSati'" :show_fw_re="is_fkSati" />
 
-		<blow v-if="type=='blow'" canvasId="canvasId1" :height="200" :width="600" refs="card" style="position: relative;margin: 0 40upx;"
+		<blow v-if="type=='blow'" canvasId="canvasId1" :height="200" :width="600" refs="card" style="margin: 0 40upx;"
 		 @complete="seatShow" :disabled="false" title="刮文本" watermark="刮一刮" @init="init_blow" :is_show="is_show_blow"
 		 :result_txt="result_blow" themeColor="#33CCCC" :txtFontSize="txtFontSize_blow" :txtColor="txtColor_blow">
 		</blow>
 
-		<!-- <blowAny v-if="type==41" canvasId="canvasId1" :height="200" :width="600" refs="card" style="position: relative;margin: 0 40upx;"
+		<!-- <blowAny v-if="type==41" canvasId="canvasId1" :height="200" :width="600" refs="card" style="margin: 0 40upx;"
 		 @complete="seatShow" :disabled="false" title="刮文本" watermark="刮一刮" @init="init_blow">
 			<view class="blow" v-if="is_show_blow" style="height:200rpx;width:600rpx;position: absolute;">
 				<view class="box" :style="{background: themeColor }">
@@ -53,11 +53,11 @@
 			</view>
 		</blowAny> -->
 
-		<blowImg v-if="type=='blowImg'" canvasId="canvasId1" :height="200" :width="600" refs="card" style="position: relative;margin: 0 40upx;"
+		<blowImg v-if="type=='blowImg'" canvasId="canvasId2" :height="200" :width="600" refs="card" style="margin: 0 40upx;"
 		 @complete="seatShow" :disabled="false" title="刮图片" watermark="刮一刮" @init="init_blow" :is_show="is_show_blow"
 		 :result_img="result_img_blow"></blowImg>
 
-		<!-- <blowAny  v-if="type==42" canvasId="canvasId1" :height="200" :width="600" refs="card" style="position: relative;margin: 0 40upx;" @complete="seatShow"
+		<!-- <blowAny  v-if="type==42" canvasId="canvasId2" :height="200" :width="600" refs="card" style="margin: 0 40upx;" @complete="seatShow"
 		 :disabled="false" title="刮图片" watermark="刮一刮" @init="init_blow">
 			<view style="position: absolute;" v-if="is_show_blow" >
 			
@@ -70,7 +70,7 @@
 		
 		</blowAny> -->
 
-		<blowAny v-if="type=='blowAny'" canvasId="canvasId1" :height="200" :width="600" refs="card" style="position: relative;margin: 0 40upx;"
+		<blowAny v-if="type=='blowAny'" canvasId="canvasId3" :height="200" :width="600" refs="card" style="margin: 0 40upx;"
 		 @complete="seatShow" :disabled="false" title="刮自定义" watermark="刮一刮" @init="init_blow">
 			<view style="position: absolute;" v-if="is_show_blow">
 				<!-- 自定义内容 -->
@@ -160,11 +160,30 @@
 			<ayQrcode ref="qrcode" :modal="modal_qr" :url="url" @hideQrcode="hideQrcode" />
 		</view>
 		
+		<ayDropdownList v-if="type=='ayDropdownList'" :maxheight="700" :marginLeft="152" :width="80" :isShow="isShow_ddList" :list="seleTypeList" @selectItem="selectItem_ddList">
+			<view style="margin-left: 40upx;" @tap="showDropdownList">自定义触发有下拉框的内容</view>
+		</ayDropdownList>
+		
+		<ayPopTips id="popup1" ref="popup1" v-if="type=='ayPopTips_center'" type="center" @closeModal="closeModal_tips" @toConfirm="toConfirm_tips" >
+			<view >
+				<view >自定义内容</view>
+			</view>
+		</ayPopTips>
+		
+		<ayPopTips id="popup1" ref="popup1" v-if="type=='ayPopTips_bottom'" type="bottom" @closeModal="closeModal_tips" @toConfirm="toConfirm_tips" >
+			<view >
+				<view >自定义内容</view>
+				<view  style="color: #FF0000;">自定义内容</view>
+			</view>
+		</ayPopTips>
+		
 	</view>
 
 </template>
 
 <script>
+	import ayPopTips from "@/components/ay-pop/ay-pop-tips.vue"
+	import ayDropdownList from "@/components/ay-dropdown-filter/ay-dropdown-list.vue"
 	
 	import ayQrcode from "@/components/ay-qrcode/ay-qrcode.vue"
 	
@@ -231,9 +250,64 @@
 			ayturn,
 			ayImageUpload,
 			ayQrcode,
+			
+			ayDropdownList,
+			ayPopTips,
 		},
 		data() {
 			return {
+				//下拉框
+				isShow_ddList : false ,
+				seleTypeList:[
+					{
+						selTip:'测试',
+						text:'======',
+					},
+					{
+						selTip:'测试2',
+						text:'======',
+					},
+					{
+						selTip:'测试23',
+						text:'======',
+					},
+					{
+						selTip:'测试',
+						text:'======',
+					},
+					{
+						selTip:'测试2',
+						text:'======',
+					},
+					{
+						selTip:'测试23',
+						text:'======',
+					},
+					{
+						selTip:'测试',
+						text:'======',
+					},
+					{
+						selTip:'测试2',
+						text:'======',
+					},
+					{
+						selTip:'测试23',
+						text:'======',
+					},
+					{
+						selTip:'测试',
+						text:'======',
+					},
+					{
+						selTip:'测试2',
+						text:'======',
+					},
+					{
+						selTip:'测试23',
+						text:'======',
+					},
+				],
 				//二维码相关参数
 				modal_qr: false,
 				url: 'https://ext.dcloud.net.cn/plugin?id=3870', // 要生成的二维码值
@@ -333,6 +407,24 @@
 		},
 		// #endif
 		methods: {
+			//弹出框
+			toConfirm_tips(){
+				this.$refs.popup1.close();
+			},
+			closeModal_tips(){
+				this.$refs.popup1.close();
+			},
+			//下拉框
+			showDropdownList(){
+				let that = this;
+				that.isShow_ddList = !that.isShow_ddList ;
+			},
+			selectItem_ddList(e){
+				let that = this;
+				console.log('选中了'+ JSON.stringify(e.item) )
+				this.$api.msg_modal('选中了'+ JSON.stringify(e.item))
+				that.isShow_ddList = false ;
+			},
 			// 展示二维码
 			showQrcode() {
 				let _this = this;
@@ -491,6 +583,8 @@
 				
 				if(that.type=='ayQrcode'){
 					that.showQrcode();//一加载生成二维码
+				}else if(that.type.substr(0,10)=='ayPopTips_'){
+					this.$refs.popup1.open();//弹出确认框
 				}
 				
 			},
