@@ -8,7 +8,6 @@
 
 <script>
 	import tiled from '@/components/ay-shortcutNav/tiled.vue';
-	import menu from '@/js/show.js';
 	export default {
 		components:{
 			tiled,
@@ -49,24 +48,7 @@
 				that.list = data.item;
 				console.log(that.list )
 			},
-			async loadData() {
-				let that = this;
 			
-				uni.showLoading({
-					title: '加载中',
-					mask: true,
-				})
-			
-				let res_home = await menu.res_home;
-				//console.log(res_home)
-				let data = res_home.data;
-			
-				
-				uni.hideLoading();
-			
-				that.isLoaded = true;
-				
-			},
 			toPage(e) {
 				console.log(e)
 				let item = e.item ;

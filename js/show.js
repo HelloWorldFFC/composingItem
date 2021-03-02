@@ -404,29 +404,37 @@ const res_home = {
 		"lottery_list": {
 			"data": [{
 				img: "https://cdn.pixabay.com/photo/2017/01/21/13/55/nature-1997282__340.jpg",
-				name: "不要指望他"
+				name: "不要指望他",
+				img_bg: "https://cdn.pixabay.com/photo/2021/02/17/12/04/winter-6024017__340.jpg",
 			}, {
 				img: "https://cdn.pixabay.com/photo/2021/01/11/21/39/temple-5909803__340.jpg",
-				name: "你在开玩笑么？"
+				name: "你在开玩笑么？",
+				img_bg: "https://cdn.pixabay.com/photo/2021/02/17/12/04/winter-6024017__340.jpg",
 			}, {
 				img: "https://cdn.pixabay.com/photo/2020/01/13/23/15/snowboarding-4763731__340.jpg",
-				name: "可怕"
+				name: "可怕",
+				img_bg: "https://cdn.pixabay.com/photo/2021/02/17/12/04/winter-6024017__340.jpg",
 			}, {
 
 				img: "https://cdn.pixabay.com/photo/2019/11/30/21/37/stars-4664313__340.jpg",
-				name: "可能"
+				name: "可能",
+				img_bg: "https://cdn.pixabay.com/photo/2021/02/13/10/26/snow-6011069__340.jpg",
 			}, {
 				img: "https://cdn.pixabay.com/photo/2020/12/23/14/41/forest-5855196_640.jpg",
-				name: "不用担心"
+				name: "不用担心",
+				img_bg: "https://cdn.pixabay.com/photo/2021/02/13/01/29/woman-6010056__340.jpg",
 			}, {
 				img: "https://cdn.pixabay.com/photo/2021/01/24/21/52/grand-canyon-5946657__340.jpg",
-				name: "答案就在你身边"
+				name: "答案就在你身边",
+				img_bg: "https://cdn.pixabay.com/photo/2021/02/13/01/29/woman-6010056__340.jpg",
 			}, {
 				img: "https://cdn.pixabay.com/photo/2021/01/14/20/32/fish-5917864__340.jpg",
-				name: "大胆一点"
+				name: "大胆一点",
+				img_bg: "https://cdn.pixabay.com/photo/2021/02/13/01/29/woman-6010056__340.jpg",
 			}, {
 				img: "https://cdn.pixabay.com/photo/2020/01/03/21/32/field-4739176__340.jpg",
-				name: "好运将会降临"
+				name: "好运将会降临",
+				img_bg: "https://cdn.pixabay.com/photo/2021/02/13/10/26/snow-6011069__340.jpg",
 			}],
 		},
 		"lottery_r_list": {

@@ -109,7 +109,9 @@
 		<aylottery :type="2" v-if="type=='aylottery2'" :list="lottery_list" themeColor="#33CCCC" bgColor="#1E90FF" bg_sd_Color="#4169E1" @result="resultFun"
 		 @toDetailPage="toDetailPage"></aylottery>
 		
-		
+		<aylottery :type="2" v-if="type=='aylottery2'" :list="lottery_list" themeColor="#33CCCC" bgColor="#1E90FF" bg_sd_Color="#F4A460" @result="resultFun"
+		 @toDetailPage="toDetailPage" theme_img_bg="https://cdn.pixabay.com/photo/2021/02/17/12/04/winter-6024017__340.jpg" :is_img_bg="true" box_shadow_Color="#F0F8FF" bg_img="https://cdn.pixabay.com/photo/2018/05/12/03/18/love-3392348__340.jpg"></aylottery>
+		 
 		
 		<aylottery :type="3" v-if="type=='aylottery3'" :list="list_r" :height="600" :width="600" :chance_num_init="chance_num_init" @result="resultFun_chance"
 		 @toDetailPage="toDetailPage" :stay_index="stay_index_r"></aylottery>
@@ -157,10 +159,10 @@
 		<ay-image-upload v-if="type=='ayImageUpload'"  :list="uploadTipList" @imgAdd="imgAddFun"></ay-image-upload>
 		
 		<view v-if="type=='ayQrcode'" style="margin-top: 26upx;margin: 40upx;">
-			<ayQrcode ref="qrcode" :modal="modal_qr" :url="url" @hideQrcode="hideQrcode" />
+			<ayQrcode ref="qrcode" :modal="modal_qr" :url="url" @hideQrcode="hideQrcode" :height="300" :width="300"/>
 		</view>
 		
-		<ayDropdownList v-if="type=='ayDropdownList'" :maxheight="700" :marginLeft="152" :width="80" :isShow="isShow_ddList" :list="seleTypeList" @selectItem="selectItem_ddList">
+		<ayDropdownList v-if="type=='ayDropdownList'" :maxheight="700" :marginLeft="152" :width="70" :isShow="isShow_ddList" :list="seleTypeList" @selectItem="selectItem_ddList">
 			<view style="margin-left: 40upx;" @tap="showDropdownList">自定义触发有下拉框的内容</view>
 		</ayDropdownList>
 		
@@ -330,6 +332,7 @@
 						remove: true,
 					},
 				],
+				
 				//翻转
 				turn_thD_list: [],
 				list_page:[],
