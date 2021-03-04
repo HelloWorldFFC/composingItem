@@ -187,8 +187,63 @@ const res_home = {
 							url: '',
 							type: 'ayPopTips_bottom',
 						},
+						
+						{
+							name: '跳跃',
+							img: 'https://cdn.pixabay.com/photo/2019/11/26/03/35/maple-4653495__340.jpg',
+							url: '',
+							type: 'cartsBall',
+						},
+						{
+							name: '跳跃',
+							img: 'https://cdn.pixabay.com/photo/2019/11/26/03/35/maple-4653495__340.jpg',
+							url: '',
+							type: 'fadeInOut',
+						},
+						
 					],
 
+				},
+				{
+					name: '券背景',
+					img: 'https://cdn.pixabay.com/photo/2020/04/11/14/42/street-5030692__340.jpg',
+					isMenu: true,
+					type: '',
+					item: [{
+							name: '卡片',
+							img: 'https://cdn.pixabay.com/photo/2020/11/22/12/45/flowers-5766495__340.jpg',
+							url: '',
+							type: 'ayCardOneList',
+						},
+						{
+				
+							name: '丝带',
+							img: 'https://cdn.pixabay.com/photo/2020/11/22/16/58/road-5767221__340.jpg',
+							url: '',
+							type: 'aybg',
+						},
+						{
+				
+							name: '丝带1',
+							img: 'https://cdn.pixabay.com/photo/2020/04/11/14/42/street-5030692__340.jpg',
+							url: '',
+							type: 'aybg1',
+						},
+						{
+				
+							name: '丝带2',
+							img: 'https://cdn.pixabay.com/photo/2019/11/26/03/35/maple-4653495__340.jpg',
+							url: '',
+							type: 'aybg2',
+						},
+						{
+				
+							name: '丝带3',
+							img: 'https://cdn.pixabay.com/photo/2019/05/28/12/09/bee-4235093__340.jpg',
+							url: '',
+							type: 'magicCubeAuto',
+						},
+					],
 				},
 				{
 					name: '其他',
@@ -521,6 +576,81 @@ const res_home = {
 				},
 			],
 		},
+		"card_list": {
+			"data": [{
+					type: 0,
+					width: 600,
+					title: '100元',
+					subtitle: '优惠券',
+					tips: '2020-12-31 18:18:18过期',
+
+					desc: '1、商城、美食可用\n2、过期作废',
+					themeColor: '#33CCCC',
+				},
+				{
+					type: 1,
+					width: 600,
+					title: '100元',
+					subtitle: '优惠券',
+					tips: '2020-12-31 18:18:18过期',
+
+					desc: '1、商城、美食可用\n2、过期作废',
+					themeColor: '#8E24AA',
+				},
+				{
+					type: 2,
+					width: 600,
+					title: '50元',
+					subtitle: '优惠券',
+					tips: '2020-12-31 18:18:18过期',
+				
+					desc: '1、商城、美食可用\n2、过期作废',
+					themeColor: '#039BE5',
+				},
+				{
+					type: 2,
+					width: 600,
+					title: '50元',
+					subtitle: '优惠券',
+					tips: '2020-12-31 18:18:18过期',
+				
+					desc: '1、商城、美食可用\n2、过期作废',
+					themeColor: '#26A69A',
+				},
+				{
+					type: 2,
+					width: 600,
+					title: '50元',
+					subtitle: '优惠券',
+					tips: '2020-12-31 18:18:18过期',
+				
+					desc: '1、商城、美食可用\n2、过期作废',
+					themeColor: '#DC143C',
+				},
+			],
+		},
+		"fade_list": {
+			"data": [
+				{
+						name: '舌尖上的小叁 刚刚购买了商品',
+						img: 'https://cdn.pixabay.com/photo/2017/01/21/13/55/nature-1997282__340.jpg'
+					},
+					{
+						name: '阿狸粑粑  刚刚购买了商品',
+						img: 'https://cdn.pixabay.com/photo/2017/01/21/13/55/nature-1997282__340.jpg'
+					},
+					{
+						name: '小丽  刚刚购买了商品',
+						img: 'https://cdn.pixabay.com/photo/2017/01/21/13/55/nature-1997282__340.jpg'
+					},
+					{
+						name: '华人街的爱豆  刚刚购买了商品',
+						img: 'https://cdn.pixabay.com/photo/2017/01/21/13/55/nature-1997282__340.jpg'
+					}
+				
+			],
+		},
+		
 	},
 }
 

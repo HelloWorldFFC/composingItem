@@ -179,11 +179,40 @@
 			</view>
 		</ayPopTips>
 		
+		<ayCardOne v-if="type=='ayCardOne'">
+			
+		</ayCardOne>
+		<ayCardTwoList v-if="type=='ayCardOneList'" :list="card_list">
+			
+		</ayCardTwoList>
+		<ayCardOneList v-if="type=='ayCardOneList'" :list="card_list">
+			
+		</ayCardOneList>
+		
+		<cartsBall v-if="type=='cartsBall'" ref="cartsBall" :ballColor="'#fff'" :zIndex="6" :endPos="{
+		        x: 150, y: 650
+		    }"
+		 :bg_img="'https://cdn.pixabay.com/photo/2019/11/26/03/35/maple-4653495__340.jpg'"></cartsBall>
+		<view v-if="type=='cartsBall'" @click="drop_cartsBall($event)">
+			<text>点击按钮展示效果</text>
+		</view>
+		
+		<fadeInOut v-if="type=='fadeInOut'"  :list="lottery_list"></fadeInOut>
+		
+		<aybg v-if="type=='aybg'" >
+			<view>自定义内容</view>
+		</aybg>
 	</view>
 
 </template>
 
 <script>
+	import aybg from '../../components/ay-bg/ay-bg.vue'
+	import fadeInOut from '../../components/ay-springing/fadeInOut.vue'
+	import cartsBall from '../../components/ay-springing/cartsBall.vue'
+	import ayCardTwoList from "@/components/ay-card/ay-card-two-list.vue"
+	import ayCardOne from "@/components/ay-card/ay-card-one.vue"
+	import ayCardOneList from "@/components/ay-card/ay-card-one-list.vue"
 	import ayPopTips from "@/components/ay-pop/ay-pop-tips.vue"
 	import ayDropdownList from "@/components/ay-dropdown-filter/ay-dropdown-list.vue"
 	
@@ -255,9 +284,22 @@
 			
 			ayDropdownList,
 			ayPopTips,
+			
+			ayCardOne,
+			ayCardOneList,
+			ayCardTwoList,
+			
+			cartsBall,
+			fadeInOut,
+			
+			aybg,
 		},
 		data() {
 			return {
+				fade_list: [
+					
+				],
+				card_list:[],
 				//下拉框
 				isShow_ddList : false ,
 				seleTypeList:[
@@ -400,8 +442,7 @@
 
 			//礼花播放
 			that.play_fw();
-
-
+			
 		},
 		// #ifdef MP-WEIXIN
 		//微信小程序的分享
@@ -410,6 +451,13 @@
 		},
 		// #endif
 		methods: {
+			//加入购物车效果
+			drop_cartsBall() {
+				this.$refs.cartsBall.drop({
+					x: 5,
+					y: 200
+				})
+			},
 			//弹出框
 			toConfirm_tips(){
 				this.$refs.popup1.close();
@@ -583,13 +631,14 @@
 
 				that.isLoaded = true;
 				
+				that.card_list = data.card_list.data;
+				that.fade_list = data.fade_list.data;
 				
 				if(that.type=='ayQrcode'){
 					that.showQrcode();//一加载生成二维码
 				}else if(that.type.substr(0,10)=='ayPopTips_'){
 					this.$refs.popup1.open();//弹出确认框
 				}
-				
 			},
 
 		},

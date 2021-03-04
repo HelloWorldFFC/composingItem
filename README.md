@@ -14,18 +14,21 @@
 1.下载示例源码解压，即可运行
 
 ## 分组件链接
-[消息通知动态往上翻，类似支付宝首页消息通知，传入数据即可使用](https://ext.dcloud.net.cn/plugin?id=3429)
-[首页轮播图，广告轮播图，类似支付宝首页轮播，传入数据即可使用](https://ext.dcloud.net.cn/plugin?id=3437)
-[首页快捷键，类似支付宝、美团、饿了么首页快捷键，传入数据即可使用，可传背景色](https://ext.dcloud.net.cn/plugin?id=3440)
-[动画效果之烟花](https://ext.dcloud.net.cn/plugin?id=3613)
-[动画效果之波浪](https://ext.dcloud.net.cn/plugin?id=3614)
-[全局条件筛选，子选项可横可竖，可改主体色](https://ext.dcloud.net.cn/plugin?id=3615)
-[搜索框，搜索列表，历史热门搜索，关键字调api搜索，可自定义提示文字，更多，颜色](https://ext.dcloud.net.cn/plugin?id=3724)
-[动画效果之各类抽奖（跳跃）](https://ext.dcloud.net.cn/plugin?id=4194)
+[消息上翻](https://ext.dcloud.net.cn/plugin?id=3429)
+[轮播图](https://ext.dcloud.net.cn/plugin?id=3437)
+[快捷键](https://ext.dcloud.net.cn/plugin?id=3440)
+[烟花](https://ext.dcloud.net.cn/plugin?id=3613)
+[波浪](https://ext.dcloud.net.cn/plugin?id=3614)
+[全局条件筛选](https://ext.dcloud.net.cn/plugin?id=3615)
+[搜索](https://ext.dcloud.net.cn/plugin?id=3724)
+[抽奖（跳跃）](https://ext.dcloud.net.cn/plugin?id=4194)
 
 ## 特别鸣谢（主要但不限于以下）
 [ColorUI的css样式库](https://ext.dcloud.net.cn/plugin?id=239)
 [动画效果给的灵感](https://ext.dcloud.net.cn/plugin?id=3685)
 [js的礼花](https://ext.dcloud.net.cn/plugin?id=1198)
+[css券实现](https://www.toutiao.com/i6911515741971989006/?tt_from=weixin&utm_campaign=client_share&wxshare_count=1&timestamp=1609215453&app=news_article&utm_source=weixin&utm_medium=toutiao_android&use_new_style=1&req_id=2020122912173301014708304820C2CE65&share_token=89e04c33-7a72-4a61-a4ad-d42bd7550dad&group_id=6911515741971989006)
+[css丝带实现1](https://www.jq22.com/webqd3850)
+[css丝带实现2](https://blog.csdn.net/weixin_33825683/article/details/89171163?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai)
 
 
