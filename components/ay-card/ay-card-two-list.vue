@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<ayCardTwo v-for="(item, index) in list" :key="index" 
-		:type="item.type" 
+		:state="item.state" 
 		:width="item.width" 
 		:title="item.title"
 		:subtitle="item.subtitle"
@@ -20,7 +20,7 @@
 				ayCardTwo,
 			},
 			props: {
-				type: {
+				state: {
 					type: Number,
 					default: 1, //1:可用  2:已用 3：过期 
 				},

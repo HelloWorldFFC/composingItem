@@ -1,8 +1,11 @@
 <template>
 	<view>
+		
 		<view class="box">
-			<view class="wrap"><span class="box6">丝带效果6</span></view>
-			<slot />
+			<span class="box1"><span>{{title}}</span></span>
+			<view style="margin-top: 66upx;">
+				<slot />
+			</view>
 		</view>
 		
 	</view>
@@ -15,7 +18,22 @@
 				
 			};
 		},
-		
+		props: {
+			state: {
+				type: Number,
+				default: 1, //1:可用  2:已用 3：过期 
+			},
+			
+			title: {
+				type: String,
+				default: '新到',
+			},
+			
+			themeColor: {
+				type: String,
+				default: '#33CCCC',
+			},
+		},
 		methods: {
 
 		}
@@ -23,10 +41,7 @@
 </script>
 
 <style lang="scss">
-	page {
-		background-color: #FFFFFF;
-	}
-
+	
 	.box {
 		display: flex;
 		justify-content: center;
@@ -38,7 +53,7 @@
 		background-color: #EEEEEE;
 		color: #FFFFFF;
 		/* css变量 */
-		--main-color: #EC407A;
+		--main-color: #F8463F;
 		--f-color: #fff;
 	}
 
@@ -56,57 +71,59 @@
 		}
 	}
 
-	.wrap {
-		width: 100%;
-		height: 188px;
+	.box1 {
 		position: absolute;
-		top: -8px;
-		left: 8px;
-		overflow: hidden;
+		top: -6px;
+		right: 10px;
 	}
 
-	.wrap:before {
+	.box1:after {
+		position: absolute;
 		content: "";
 		display: block;
-		border-radius: 8px 8px 0px 0px;
-		width: 40px;
-		height: 8px;
-		position: absolute;
-		right: 100px;
-		background: #4D6530;
+		width: 0;
+		height: 0;
+		border-left: 53px solid transparent;
+		border-right: 53px solid transparent;
+		border-top: 10px solid var(--main-color);
 	}
 
-	.wrap:after {
-		content: "";
-		display: block;
-		border-radius: 0px 8px 8px 0px;
-		width: 8px;
-		height: 40px;
-		position: absolute;
-		right: 0px;
-		top: 100px;
-		background: #4D6530;
-	}
-
-	.box6 {
+	.box1 span {
+		position: relative;
 		display: inline-block;
 		text-align: center;
-		width: 200px;
-		height: 40px;
-		line-height: 40px;
-		position: absolute;
-		top: 30px;
-		right: -50px;
-		z-index: 2;
-		overflow: hidden;
-		transform: rotate(45deg);
-		-ms-transform: rotate(45deg);
-		-moz-transform: rotate(45deg);
-		-webkit-transform: rotate(45deg);
-		-o-transform: rotate(45deg);
-		border: 1px dashed;
-		box-shadow: 0 0 0 3px #57DD43, 0px 21px 5px -18px rgba(0, 0, 0, 0.6);
-		background: #57DD43;
+		background: var(--main-color);
+		font-size: 14px;
+		line-height: 1;
+		padding: 12px 8px 10px;
+		border-top-right-radius: 8px;
+		width: 90px;
 	}
 
+	.box1 span:before,
+	.box1 span:after {
+		position: absolute;
+		content: "";
+		display: block;
+	}
+
+	.box1 span:before {
+		background: var(--main-color);
+		height: 6px;
+		width: 6px;
+		left: -6px;
+		top: 0;
+	}
+
+	.box1 span:after {
+		background: var(--main-color);
+		height: 6px;
+		width: 8px;
+		border-radius: 8px 8px 0 0;
+		left: -8px;
+		top: 0;
+	}
+
+	
+	
 </style>

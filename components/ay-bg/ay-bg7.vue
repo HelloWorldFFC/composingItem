@@ -1,12 +1,9 @@
 <template>
 	<view>
 		
-		<view  style="background-color: #EEEEEE;">
+		<view class="box">
 			<view class="a">
-				<view class="b"><text>点我</text></view>
-				<view class="b"><text>查看</text></view>
-				<view class="b"><text>效果</text></view>
-				<view class="b"><text>哈哈</text></view>
+				<view class="b"><text>{{title}}</text></view>
 			</view>
 		</view>
 	</view>
@@ -19,7 +16,22 @@
 				
 			};
 		},
-		
+		props: {
+			state: {
+				type: Number,
+				default: 1, //1:可用  2:已用 3：过期 
+			},
+			
+			title: {
+				type: String,
+				default: '新到',
+			},
+			
+			themeColor: {
+				type: String,
+				default: '#33CCCC',
+			},
+		},
 		methods: {
 
 		}
@@ -27,7 +39,11 @@
 </script>
 
 <style lang="scss">
-	
+	.box{
+		background-color: #EEEEEE;
+		/* css变量 */
+		--main-color: #33CCCC;
+	}
 
 	.a {
 		display: flex;
@@ -92,6 +108,6 @@
 
 	.a .b:hover text {
 		margin-top: 0px;
-		background: #a2dee7;
+		background:  var(--main-color);
 	}
 </style>

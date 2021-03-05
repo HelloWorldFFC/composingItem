@@ -1,26 +1,29 @@
 <template>
 	<view>
-		<bg1 v-if="type==1">
-			<slot />
-		</bg1>
-		<bg2 v-if="type==2">
-			<slot />
-		</bg2>
-		<bg3 v-if="type==3">
-			<slot />
-		</bg3>
-		<bg4 v-if="type==4">
-			<slot />
-		</bg4>
-		<bg5 v-if="type==5">
-			<slot />
-		</bg5>
-		<bg6 v-if="type==6">
-			<slot />
-		</bg6>
-		<bg7 v-if="type==7">
-			<slot />
-		</bg7>
+		<view v-for="(item, index) in list" :key="index">
+			<bg1 v-if="item.type==1" :title="item.title" :themeColor="item.themeColor">
+				<slot />
+			</bg1>
+			<bg2 v-if="item.type==2" :title="item.title" :themeColor="item.themeColor">
+				<slot />
+			</bg2>
+			<bg3 v-if="item.type==3" :title="item.title">
+				<slot />
+			</bg3>
+			<bg4 v-if="item.type==4" :title="item.title" >
+				<slot />
+			</bg4>
+			<bg5 v-if="item.type==5" :title="item.title">
+				<slot />
+			</bg5>
+			<bg6 v-if="item.type==6" :title="item.title" >
+				<slot />
+			</bg6>
+			<bg7 v-if="item.type==7" :title="item.title">
+				<slot />
+			</bg7>
+		</view>
+		
 		
 	</view>
 </template>
@@ -44,10 +47,7 @@
 			bg7,
 		},
 		props: {
-			type: {
-				type: Number,
-				default: 1, //1:
-			},
+			
 			list: {
 				type: Array,
 				default () {

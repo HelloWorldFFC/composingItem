@@ -25,7 +25,7 @@
 <script>
 	export default {
 		props: {
-			type: {
+			state: {
 				type: Number,
 				default: 1, //1:可用  2:已用 3：过期 
 			},

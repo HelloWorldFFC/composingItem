@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="box">
-			<span class="box2">丝<br>带<br>效<br>果<br>2</span>
+			<span class="box4" :style="{background:themeColor}">{{title}}</span>
 			<slot />
 		</view>
 		
@@ -15,7 +15,22 @@
 				
 			};
 		},
-		
+		props: {
+			state: {
+				type: Number,
+				default: 1, //1:可用  2:已用 3：过期 
+			},
+			
+			title: {
+				type: String,
+				default: '新到',
+			},
+			
+			themeColor: {
+				type: String,
+				default: '#33CCCC',
+			},
+		},
 		methods: {
 
 		}
@@ -34,9 +49,7 @@
 		margin-bottom: 30px;
 		background-color: #EEEEEE;
 		color: #FFFFFF;
-		/* css变量 */
-		--main-color: #F47530;
-		--f-color: #fff;
+		
 	}
 
 	.box:nth-child(even) {
@@ -52,43 +65,39 @@
 			margin-right: 0%;
 		}
 	}
-
-
-	.box2 {
-		display: inline-block;
-		width: 60px;
-		padding: 10px 0;
-		background: --main-color;
-		top: -6px;
-		left: 25px;
+	
+	.box4 {
 		position: absolute;
-		text-align: center;
-		border-top-left-radius: 3px;
-	}
-
-	.box2:before {
-		height: 0;
-		width: 0;
-		border-bottom: 6px solid #8D5A20;
-		border-right: 6px solid transparent;
-		right: -6px;
-		top: 0;
-	}
-
-	.box2:before,
-	.box2:after {
-		content: "";
-		position: absolute;
-	}
-
-	.box2:after {
-		height: 0;
-		width: 0;
-		border-left: 30px solid --main-color;
-		border-right: 30px solid --main-color;
-		border-bottom: 30px solid transparent;
-		bottom: -30px;
 		left: 0;
+		top: 15px;
+		padding: 8px 10px;
+		box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+	
+	.box4:before,
+	.box4:after {
+		position: absolute;
+		content: "";
+		display: block;
+	}
+
+	.box4:before {
+		width: 7px;
+		height: 100%;
+		padding: 0 0 7px;
+		top: 0;
+		left: -7px;
+		background: inherit;
+		border-radius: 5px 0 0 5px;
+	}
+
+	.box4:after {
+		width: 5px;
+		height: 5px;
+		background: rgba(0, 0, 0, 0.35);
+		bottom: -5px;
+		left: -5px;
+		border-radius: 5px 0 0 5px;
 	}
 
 	

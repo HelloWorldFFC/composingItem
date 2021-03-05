@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="box">
-			<span class="box4">丝带效果4</span>
+			<span class="box2">{{str[0]}}<br>{{str[1]}}<br>{{str[2]}}<br>{{str[3]}}<br>{{str[4]}}</span>
 			<slot />
 		</view>
 		
@@ -12,10 +12,34 @@
 	export default {
 		data() {
 			return {
-				
+				str:['','','','',''],
 			};
 		},
-		
+		props: {
+			state: {
+				type: Number,
+				default: 1, //1:可用  2:已用 3：过期 
+			},
+			
+			title: {
+				type: String,
+				default: '新到',
+			},
+			
+			themeColor: {
+				type: String,
+				default: '#33CCCC',
+			},
+		},
+		created:function(){
+			let that = this;
+			
+			let title = that.title ;
+			for(let i=0 ; i<title.length ; i++){
+				that.str[i]= title.substr(i,1) ;
+			}
+			
+		},
 		methods: {
 
 		}
@@ -35,7 +59,7 @@
 		background-color: #EEEEEE;
 		color: #FFFFFF;
 		/* css变量 */
-		--main-color: #EC407A;
+		--main-color: #F47530;
 		--f-color: #fff;
 	}
 
@@ -52,40 +76,43 @@
 			margin-right: 0%;
 		}
 	}
-	
-	.box4 {
+
+
+	.box2 {
+		display: inline-block;
+		width: 60px;
+		padding: 10px 0;
+		background: var(--main-color);
+		top: -6px;
+		left: 25px;
 		position: absolute;
-		left: 0;
-		top: 15px;
-		padding: 8px 10px;
-		background: #00B3ED;
-		box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.5);
-	}
-	
-	.box4:before,
-	.box4:after {
-		position: absolute;
-		content: "";
-		display: block;
+		text-align: center;
+		border-top-left-radius: 3px;
 	}
 
-	.box4:before {
-		width: 7px;
-		height: 100%;
-		padding: 0 0 7px;
+	.box2:before {
+		height: 0;
+		width: 0;
+		border-bottom: 6px solid #8D5A20;
+		border-right: 6px solid transparent;
+		right: -6px;
 		top: 0;
-		left: -7px;
-		background: inherit;
-		border-radius: 5px 0 0 5px;
 	}
 
-	.box4:after {
-		width: 5px;
-		height: 5px;
-		background: rgba(0, 0, 0, 0.35);
-		bottom: -5px;
-		left: -5px;
-		border-radius: 5px 0 0 5px;
+	.box2:before,
+	.box2:after {
+		content: "";
+		position: absolute;
+	}
+
+	.box2:after {
+		height: 0;
+		width: 0;
+		border-left: 30px solid  var(--main-color);
+		border-right: 30px solid  var(--main-color);
+		border-bottom: 30px solid transparent;
+		bottom: -30px;
+		left: 0;
 	}
 
 	

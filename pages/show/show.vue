@@ -126,7 +126,22 @@
 		 
 		</aylottery>
 		
+		<aylottery :type="6" v-if="type=='aylottery6'" canvasId="canvasId3" :height="200" :width="600" refs="card" style="margin: 0 40upx;"
+		 @complete="seatShow" :disabled="false" title="刮自定义" watermark="刮一刮" @init="init_blow">
+			<view style="position: absolute;" v-if="is_show_blow">
+				<!-- 自定义内容 -->
+				<view>
+					<scBg :height="200" :width="600">
+						<view>
+							<radar colorName="hotPink" :height="200" :width="200"></radar>
+						</view>
+					</scBg>
+				</view>
 		
+			</view>
+		
+		
+		</aylottery>
 		
 		<view style="margin-top: 130upx;" v-if="type=='ayturn3'">
 			<!-- 3d的会影响闪动一下，但不影响单独使用 -->
@@ -194,12 +209,13 @@
 		    }"
 		 :bg_img="'https://cdn.pixabay.com/photo/2019/11/26/03/35/maple-4653495__340.jpg'"></cartsBall>
 		<view v-if="type=='cartsBall'" @click="drop_cartsBall($event)">
-			<text>点击按钮展示效果</text>
+			<text>跳出来</text>
 		</view>
 		
 		<fadeInOut v-if="type=='fadeInOut'"  :list="lottery_list"></fadeInOut>
 		
-		<aybg v-if="type=='aybg'" >
+		<aybg v-if="type=='aybg'" :list="mark_list">
+			
 			<view>自定义内容</view>
 		</aybg>
 	</view>
@@ -299,6 +315,7 @@
 				fade_list: [
 					
 				],
+				mark_list:[],
 				card_list:[],
 				//下拉框
 				isShow_ddList : false ,
@@ -633,6 +650,7 @@
 				
 				that.card_list = data.card_list.data;
 				that.fade_list = data.fade_list.data;
+				that.mark_list  = data.mark_list.data;
 				
 				if(that.type=='ayQrcode'){
 					that.showQrcode();//一加载生成二维码

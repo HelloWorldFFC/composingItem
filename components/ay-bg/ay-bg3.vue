@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="box">
-			<span class="box3">丝带效果3</span>
+			<span class="box3">{{title}}</span>
 			<slot />
 		</view>
 		
@@ -15,7 +15,22 @@
 				
 			};
 		},
-		
+		props: {
+			state: {
+				type: Number,
+				default: 1, //1:可用  2:已用 3：过期 
+			},
+			
+			title: {
+				type: String,
+				default: '新到',
+			},
+			
+			themeColor: {
+				type: String,
+				default: '#33CCCC',
+			},
+		},
 		methods: {
 
 		}
@@ -38,7 +53,7 @@
 		background-color: #EEEEEE;
 		color: #FFFFFF;
 		/* css变量 */
-		--main-color: #EC407A;
+		--main-color: #59324C;
 		--f-color: #fff;
 	}
 
@@ -62,7 +77,7 @@
 		height: 50px;
 		line-height: 50px;
 		padding-left: 15px;
-		background: #59324C;
+		background: var(--main-color);
 		left: -8px;
 		top: 20px
 	}
@@ -87,7 +102,7 @@
 		width: 0;
 		border-top: 25px solid transparent;
 		border-bottom: 25px solid transparent;
-		border-left: 15px solid #59324C;
+		border-left: 15px solid var(--main-color);
 		right: -15px;
 	}
 

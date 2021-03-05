@@ -42,6 +42,13 @@ const res_home = {
 							url: '',
 							type: 'aylottery5',
 						},
+						{
+						
+							name: '刮自定义',
+							img: 'https://cdn.pixabay.com/photo/2016/11/29/06/20/anniversary-1867767__340.jpg',
+							url: '',
+							type: 'aylottery6',
+						},
 					],
 				},
 				{
@@ -85,34 +92,34 @@ const res_home = {
 						},
 					],
 				},
-				{
-					name: '刮一刮',
-					img: 'https://cdn.pixabay.com/photo/2020/11/23/15/00/butterfly-5770034__340.jpg',
+				// {
+				// 	name: '刮一刮',
+				// 	img: 'https://cdn.pixabay.com/photo/2020/11/23/15/00/butterfly-5770034__340.jpg',
 
-					type: '',
-					isMenu: true,
-					item: [{
+				// 	type: '',
+				// 	isMenu: true,
+				// 	item: [{
 
-							name: '刮文本',
-							img: 'https://cdn.pixabay.com/photo/2016/11/29/13/09/blur-1869731__340.jpg',
-							type: 'blow',
-						},
-						{
+				// 			name: '刮文本',
+				// 			img: 'https://cdn.pixabay.com/photo/2016/11/29/13/09/blur-1869731__340.jpg',
+				// 			type: 'blow',
+				// 		},
+				// 		{
 
-							name: '刮图片',
-							img: 'https://cdn.pixabay.com/photo/2020/04/11/14/42/street-5030692__340.jpg',
-							url: '',
-							type: 'blowImg',
-						},
-						{
+				// 			name: '刮图片',
+				// 			img: 'https://cdn.pixabay.com/photo/2020/04/11/14/42/street-5030692__340.jpg',
+				// 			url: '',
+				// 			type: 'blowImg',
+				// 		},
+				// 		{
 
-							name: '刮自定义',
-							img: 'https://cdn.pixabay.com/photo/2016/11/29/06/20/anniversary-1867767__340.jpg',
-							url: '',
-							type: 'blowAny',
-						},
-					],
-				},
+				// 			name: '刮自定义',
+				// 			img: 'https://cdn.pixabay.com/photo/2016/11/29/06/20/anniversary-1867767__340.jpg',
+				// 			url: '',
+				// 			type: 'blowAny',
+				// 		},
+				// 	],
+				// },
 
 				{
 					name: '翻转',
@@ -150,6 +157,27 @@ const res_home = {
 
 					],
 
+				},
+				{
+					name: '券背景',
+					img: 'https://cdn.pixabay.com/photo/2020/04/11/14/42/street-5030692__340.jpg',
+					isMenu: true,
+					type: '',
+					item: [{
+							name: '卡片',
+							img: 'https://cdn.pixabay.com/photo/2020/11/22/12/45/flowers-5766495__340.jpg',
+							url: '',
+							type: 'ayCardOneList',
+						},
+						{
+				
+							name: '标签',
+							img: 'https://cdn.pixabay.com/photo/2020/11/22/16/58/road-5767221__340.jpg',
+							url: '',
+							type: 'aybg',
+						},
+						
+					],
 				},
 				{
 					name: '实用',
@@ -204,47 +232,7 @@ const res_home = {
 					],
 
 				},
-				{
-					name: '券背景',
-					img: 'https://cdn.pixabay.com/photo/2020/04/11/14/42/street-5030692__340.jpg',
-					isMenu: true,
-					type: '',
-					item: [{
-							name: '卡片',
-							img: 'https://cdn.pixabay.com/photo/2020/11/22/12/45/flowers-5766495__340.jpg',
-							url: '',
-							type: 'ayCardOneList',
-						},
-						{
 				
-							name: '丝带',
-							img: 'https://cdn.pixabay.com/photo/2020/11/22/16/58/road-5767221__340.jpg',
-							url: '',
-							type: 'aybg',
-						},
-						{
-				
-							name: '丝带1',
-							img: 'https://cdn.pixabay.com/photo/2020/04/11/14/42/street-5030692__340.jpg',
-							url: '',
-							type: 'aybg1',
-						},
-						{
-				
-							name: '丝带2',
-							img: 'https://cdn.pixabay.com/photo/2019/11/26/03/35/maple-4653495__340.jpg',
-							url: '',
-							type: 'aybg2',
-						},
-						{
-				
-							name: '丝带3',
-							img: 'https://cdn.pixabay.com/photo/2019/05/28/12/09/bee-4235093__340.jpg',
-							url: '',
-							type: 'magicCubeAuto',
-						},
-					],
-				},
 				{
 					name: '其他',
 					img: 'https://cdn.pixabay.com/photo/2020/05/17/20/34/concept-5183469__340.jpg',
@@ -578,7 +566,7 @@ const res_home = {
 		},
 		"card_list": {
 			"data": [{
-					type: 0,
+					type: 1,
 					width: 600,
 					title: '100元',
 					subtitle: '优惠券',
@@ -588,9 +576,9 @@ const res_home = {
 					themeColor: '#33CCCC',
 				},
 				{
-					type: 1,
+					type: 2,
 					width: 600,
-					title: '100元',
+					title: '10元',
 					subtitle: '优惠券',
 					tips: '2020-12-31 18:18:18过期',
 
@@ -598,7 +586,7 @@ const res_home = {
 					themeColor: '#8E24AA',
 				},
 				{
-					type: 2,
+					type: 3,
 					width: 600,
 					title: '50元',
 					subtitle: '优惠券',
@@ -608,9 +596,9 @@ const res_home = {
 					themeColor: '#039BE5',
 				},
 				{
-					type: 2,
+					type: 4,
 					width: 600,
-					title: '50元',
+					title: '20元',
 					subtitle: '优惠券',
 					tips: '2020-12-31 18:18:18过期',
 				
@@ -618,13 +606,130 @@ const res_home = {
 					themeColor: '#26A69A',
 				},
 				{
-					type: 2,
+					type: 5,
 					width: 600,
-					title: '50元',
+					title: '5元',
 					subtitle: '优惠券',
 					tips: '2020-12-31 18:18:18过期',
 				
 					desc: '1、商城、美食可用\n2、过期作废',
+					themeColor: '#DC143C',
+				},
+				{
+					type: 6,
+					width: 600,
+					title: '1元',
+					subtitle: '优惠券',
+					tips: '2020-12-31 18:18:18过期',
+				
+					desc: '1、商城、美食可用\n2、过期作废',
+					themeColor: '#DC143C',
+				},
+				{
+					type: 7,
+					width: 600,
+					title: '30元',
+					subtitle: '优惠券',
+					tips: '2020-12-31 18:18:18过期',
+				
+					desc: '1、商城、美食可用\n2、过期作废',
+					themeColor: '#DC143C',
+				},
+			],
+		},
+		"mark_list": {
+			"data": [
+				{
+					type: 1,
+					width: 600,
+					title: '会员专享',
+					
+					themeColor: '#33CCCC',
+				},
+				{
+					type: 1,
+					width: 600,
+					title: '会员专享',
+					
+					themeColor: '#8E24AA',
+				},
+				{
+					type: 1,
+					width: 600,
+					title: '会员专享',
+					
+					themeColor: '#DC143C',
+				},
+				{
+					type: 2,
+					width: 600,
+					title: '会员专享',
+					tips: '2020-12-31 18:18:18过期',
+				
+					desc: '1、商城、美食可用\n2、过期作废',
+					themeColor: '#8E24AA',
+				},
+				{
+					type: 2,
+					width: 600,
+					title: '会员专享',
+					tips: '2020-12-31 18:18:18过期',
+				
+					desc: '1、商城、美食可用\n2、过期作废',
+					themeColor: '#33CCCC',
+				},
+				{
+					type: 2,
+					width: 600,
+					title: '会员专享',
+					tips: '2020-12-31 18:18:18过期',
+				
+					desc: '1、商城、美食可用\n2、过期作废',
+					themeColor: '#DC143C',
+				},
+				{
+					type: 3,
+					width: 600,
+					title: '家庭号专享',
+					subtitle: '',
+					tips: '2020-12-31 18:18:18过期',
+				
+					desc: '1、商城、美食可用\n2、过期作废',
+					themeColor: '#039BE5',
+				},
+				{
+					type: 4,
+					width: 600,
+					title: '限品类',
+					subtitle: '优惠券',
+					tips: '2020-12-31 18:18:18过期',
+						
+					desc: '1、商城、美食可用\n2、过期作废',
+					themeColor: '#8E24AA',
+				},
+				{
+					type: 5,
+					width: 600,
+					title: '满减限品类家庭号专享',
+					
+					themeColor: '#33CCCC',
+				},
+				
+				{
+						type: 6,
+						width: 600,
+						title: '新到',
+						subtitle: '优惠券',
+						tips: '2020-12-31 18:18:18过期',
+						
+						desc: '1、商城、美食可用\n2、过期作废',
+						themeColor: '#33CCCC',
+					},
+				{
+					type: 7,
+					width: 600,
+					title: '新到',
+					
 					themeColor: '#DC143C',
 				},
 			],

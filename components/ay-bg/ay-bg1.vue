@@ -1,11 +1,8 @@
 <template>
 	<view>
-		
 		<view class="box">
-			<span class="box1"><span>特惠价</span></span>
-			<view style="margin-top: 66upx;">
-				<slot />
-			</view>
+			<view class="wrap"><span class="box6" :style="style">{{title}}</span></view>
+			<slot />
 		</view>
 		
 	</view>
@@ -18,6 +15,33 @@
 				
 			};
 		},
+		props: {
+			state: {
+				type: Number,
+				default: 1, //1:可用  2:已用 3：过期 
+			},
+			
+			title: {
+				type: String,
+				default: '新到',
+			},
+			
+			themeColor: {
+				type: String,
+				default: '#33CCCC',
+			},
+		},
+		computed: {
+			style() {
+				let that = this;
+				var style = '';
+				// box-shadow: 0 0 0 3px  var(--main-color), 0px 21px 5px -18px rgba(0, 0, 0, 0.6);
+				// background: var(--main-color);
+				style += `background:${that.themeColor};`;
+				style += `box-shadow: 0 0 0 3px  ${that.themeColor}, 0px 21px 5px -18px rgba(0, 0, 0, 0.6);`;
+				return style;
+			},
+		},
 		
 		methods: {
 
@@ -26,7 +50,10 @@
 </script>
 
 <style lang="scss">
-	
+	page {
+		background-color: #FFFFFF;
+	}
+
 	.box {
 		display: flex;
 		justify-content: center;
@@ -37,9 +64,7 @@
 		margin-bottom: 30px;
 		background-color: #EEEEEE;
 		color: #FFFFFF;
-		/* css变量 */
-		--main-color: #EC407A;
-		--f-color: #fff;
+		
 	}
 
 	.box:nth-child(even) {
@@ -56,59 +81,56 @@
 		}
 	}
 
-	.box1 {
+	.wrap {
+		width: 100%;
+		height: 188px;
 		position: absolute;
-		top: -6px;
-		right: 10px;
+		top: -8px;
+		left: 8px;
+		overflow: hidden;
 	}
 
-	.box1:after {
-		position: absolute;
+	.wrap:before {
 		content: "";
 		display: block;
-		width: 0;
-		height: 0;
-		border-left: 53px solid transparent;
-		border-right: 53px solid transparent;
-		border-top: 10px solid #F8463F;
+		border-radius: 8px 8px 0px 0px;
+		width: 40px;
+		height: 8px;
+		position: absolute;
+		right: 100px;
+		background: #4D6530;
 	}
 
-	.box1 span {
-		position: relative;
+	.wrap:after {
+		content: "";
+		display: block;
+		border-radius: 0px 8px 8px 0px;
+		width: 8px;
+		height: 40px;
+		position: absolute;
+		right: 0px;
+		top: 100px;
+		background: #4D6530;
+	}
+
+	.box6 {
 		display: inline-block;
 		text-align: center;
-		background: #F8463F;
-		font-size: 14px;
-		line-height: 1;
-		padding: 12px 8px 10px;
-		border-top-right-radius: 8px;
-		width: 90px;
-	}
-
-	.box1 span:before,
-	.box1 span:after {
+		width: 200px;
+		height: 40px;
+		line-height: 40px;
 		position: absolute;
-		content: "";
-		display: block;
+		top: 30px;
+		right: -50px;
+		z-index: 2;
+		overflow: hidden;
+		transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		border: 1px dashed;
+		
 	}
 
-	.box1 span:before {
-		background: #F8463F;
-		height: 6px;
-		width: 6px;
-		left: -6px;
-		top: 0;
-	}
-
-	.box1 span:after {
-		background: #C02031;
-		height: 6px;
-		width: 8px;
-		border-radius: 8px 8px 0 0;
-		left: -8px;
-		top: 0;
-	}
-
-	
-	
 </style>
