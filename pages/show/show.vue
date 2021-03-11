@@ -106,14 +106,14 @@
 		 :show_again="true" again_txt="重新开始" :tips_init="tips_init_turn" :no_z_init="no_z_init_turn"></aylottery>
 		
 		
-		<aylottery :type="2" v-if="type=='aylottery2'" :list="lottery_list" themeColor="#33CCCC" bgColor="#1E90FF" bg_sd_Color="#4169E1" @result="resultFun_m"
+		<aylottery :type="2" v-if="type=='aylottery2'" :list="lottery_list" themeColor="#33CCCC" bgColor="#1E90FF" bg_sd_Color="#4169E1" @result="resultFun"
 		 @toDetailPage="toDetailPage"
 		  :stay_index="stay_index_m"></aylottery>
 		
 		<aylottery :type="2" v-if="type=='aylottery2'" 
 		:list="lottery_list" 
 		themeColor="#33CCCC" 
-		bgColor="#1E90FF" bg_sd_Color="#F4A460" @result="resultFun_m"
+		bgColor="#1E90FF" bg_sd_Color="#F4A460" @result="resultFun"
 		 @toDetailPage="toDetailPage" 
 		 theme_img_bg="https://cdn.pixabay.com/photo/2021/02/17/12/04/winter-6024017__340.jpg" 
 		 :is_img_bg="true" 
@@ -254,11 +254,23 @@
 		
 			<view>自定义内容</view>
 		</aybg>
+		
+		<aylivehelp v-if="type=='aylivehelp'" 
+		img="https://cdn.pixabay.com/photo/2016/11/29/13/24/balloons-1869816__340.jpg"
+		:show="show_help"
+		@toDetailPage="toDetailPage_help"
+		@close="close_help"
+		:bottom="340"
+		:right="140">
+		
+		</aylivehelp>
+		
 	</view>
 
 </template>
 
 <script>
+	import aylivehelp from '../../components/ay-help/live-help.vue'
 	import aybg from '../../components/ay-bg/ay-bg.vue'
 	import fadeInOut from '../../components/ay-springing/fadeInOut.vue'
 	import cartsBall from '../../components/ay-springing/cartsBall.vue'
@@ -345,9 +357,12 @@
 			fadeInOut,
 			
 			aybg,
+			aylivehelp,
 		},
 		data() {
 			return {
+				//在线客服
+				show_help:true,
 				fade_list: [
 					
 				],
@@ -510,6 +525,14 @@
 		},
 		// #endif
 		methods: {
+			//在线客服
+			toDetailPage_help(){
+				let that = this;
+			},
+			close_help(){
+				let that = this;
+				that.show_help = false ;
+			},
 			//加入购物车效果
 			drop_cartsBall() {
 				this.$refs.cartsBall.drop({
@@ -595,7 +618,7 @@
 				let index = num < legth ? num : (legth - 1);
 				return that.lottery_list[index].name || '哈哈'
 			},
-			resultFun_m(e) {
+			resultFun(e) {
 				let that = this;
 				let item = e.item;
 				let list = e.list;

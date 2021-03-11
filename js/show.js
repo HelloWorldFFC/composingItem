@@ -228,7 +228,12 @@ const res_home = {
 							url: '',
 							type: 'fadeInOut',
 						},
-						
+						{
+							name: '可关闭悬浮框',
+							img: 'https://cdn.pixabay.com/photo/2019/11/26/03/35/maple-4653495__340.jpg',
+							url: '',
+							type: 'aylivehelp',
+						},
 					],
 
 				},
