@@ -198,7 +198,7 @@
 		
 		<view class="cf-shuCenter" v-if="type=='ayQrcode'">
 			<view style="margin: 40upx;">
-				<ayQrcode ref="qrcode" :modal="modal_qr" :url="url" @hideQrcode="hideQrcode" :height="300" :width="300" />
+				<ayQrcode ref="qrcode" :themeColor="themeColor" :modal="modal_qr" :url="url" @hideQrcode="hideQrcode" :height="300" :width="300" />
 			</view>
 			<view class="cf-hengCenter input-box">
 				<view style="padding-right: 20upx;">网址:</view>
@@ -423,6 +423,7 @@
 				//二维码相关参数
 				modal_qr: false,
 				url: 'https://ext.dcloud.net.cn/plugin?id=3870', // 要生成的二维码值
+				url_maxlength:1000,
 				
 				//凭证
 				themeColor: '#33CCCC',

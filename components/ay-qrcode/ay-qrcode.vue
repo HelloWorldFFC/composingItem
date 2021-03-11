@@ -2,8 +2,14 @@
 	<view :class="modal?'show':'hide'">
 		<view style="text-align: center;" :style="{'margin-left':  marginLeft + 'px'}" @longtap="longtapCode">
 			<!-- style="width: 550rpx;height: 550rpx;" -->
-			<canvas class="canvas" :style="style_w_h" :canvas-id="qrcode_id"></canvas>
+			<canvas class="canvas" :style="style_w_h" :canvas-id="qrcode_id">
+				<view v-if="modal&&is_themeImg" :style="style_w_h" class="box-img">
+					<image :style="style_w_h_img" mode="scaleToFill" :src="themeImg"></image>
+				</view>
+				
+			</canvas>
 			<!-- <image mode="scaleToFill" :src="imagePath"></image> -->
+			
 		</view>
 	</view>
 </template>
@@ -16,7 +22,7 @@
 			return {
 				show: true,
 				imagePath: '',
-				qrcode_id: 'qrcode_id',
+				// qrcode_id: 'qrcode_id',
 				marginLeft: 0,
 			}
 		},
@@ -37,6 +43,31 @@
 				type: Number,
 				default: 260
 			},
+			themeColor: {
+				type: String,
+				default: '#333333',
+			},
+			qrcode_id: {
+				type: String,
+				default: 'qrcode_id',
+			},
+			is_themeImg: {
+				type: Boolean,
+				default: false,
+			},
+			themeImg: {
+				type: String,
+				default: 'https://cdn.pixabay.com/photo/2016/11/29/13/24/balloons-1869816__340.jpg',
+			},
+			height_img: {
+				type: Number,
+				default: 30
+			},
+			width_img: {
+				type: Number,
+				default: 30
+			},
+			
 		},
 		computed: {
 			style_w_h() {
@@ -51,6 +82,20 @@
 					style += `width:${width*2}rpx;`;
 				}
 
+				return style;
+			},
+			style_w_h_img() {
+				let that = this;
+				var height = parseInt(that.height_img);
+				var width = parseInt(that.width_img);
+				var style = '';
+				if (height > 0) {
+					style = `height:${height*2}rpx;`;
+				}
+				if (width > 0) {
+					style += `width:${width*2}rpx;`;
+				}
+			
 				return style;
 			},
 		},
@@ -93,22 +138,22 @@
 					text: this.url,
 					width: _this.width,
 					height: _this.height,
-					colorDark: "#333333",
+					colorDark: _this.themeColor,//#333333
 					colorLight: "#FFFFFF",
-					correctLevel: qrCode.CorrectLevel.H
+					correctLevel: qrCode.CorrectLevel.H,
 				})
 				// #endif
 				//#ifdef MP-WEIXIN
-				_this.createQrCode(this.url, _this.qrcode_id, _this.width, _this.height);
+				_this.createQrCode(this.url, _this.qrcode_id, _this.width, _this.height,_this.themeColor);
 				// #endif
 
 				//_this.createQrCode(this.url, _this.qrcode_id, _this.width, _this.height);
 			},
 			//#ifdef MP-WEIXIN
 
-			createQrCode: function(url, canvasId, cavW, cavH) {
+			createQrCode: function(url, canvasId, cavW, cavH,cavColor) {
 				//调用插件中的draw方法，绘制二维码图片
-				qr_we.api.draw(url, canvasId, cavW, cavH, this, this.canvasToTempImage);
+				qr_we.api.draw(url, canvasId, cavW, cavH,cavColor, this, this.canvasToTempImage);
 				// setTimeout(() => { this.canvasToTempImage();},100);
 
 			},
@@ -221,11 +266,23 @@
 	// 	}
 	// }
 	.canvas {
+		position: relative;
 		margin: auto;
 		display: inline-block;
 		margin: auto;
 	}
-
+	.canvas image{
+		width: 60upx;
+		height: 60upx;
+		border-radius: 50%;
+	}
+	.box-img{
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 	.opacity {
 		opacity: 0;
 		display: block;
