@@ -242,6 +242,7 @@ page,
 	font-size: 20upx;
 }
 .cf-btn-m-box{
+	width: 100%;
 	text-align: center;
 }
 .cf-btn-m {

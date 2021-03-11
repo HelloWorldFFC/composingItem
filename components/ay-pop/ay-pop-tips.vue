@@ -9,8 +9,9 @@
 				<view>
 					<view class="ct-title">{{title}}</view>
 					<slot />
-					<view v-if="type=='bottom'" :style="{'background-color': themeColor}" class="btn-box-btm" @tap="toConfirm">{{confirmText}}</view>
-
+					<view v-if="type=='bottom'" class="cf-btn-m-box"  @tap="toConfirm">
+						<view class="cf-btn-m" :style="{'background-color': themeColor }">{{confirmText}}</view>
+					</view>
 				</view>
 				
 				
@@ -186,17 +187,19 @@
 		text-align: center;
 		padding-bottom: 40upx;
 	}
-	.btn-box-btm {
-		padding-top: 20upx;
+	
+	.cf-btn-m-box{
+		width: 100%;
 		text-align: center;
+	}
+	.cf-btn-m {
 		color: #FFFFFF;
-		width: 90%;
-		border-radius: 6upx;
+		width: 80%;
+		border-radius: 68upx;
 		margin: 20upx auto;
 		padding: 20upx;
-		font-size: 36upx;
+		font-size: 40upx;
 	}
-
 	.ct-one {
 		display: flex;
 		flex-direction: row;

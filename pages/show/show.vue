@@ -171,37 +171,61 @@
 		
 		
 		
-		<ay-image-upload v-if="type=='ayImageUpload'"  :list="uploadTipList" @imgAdd="imgAddFun"></ay-image-upload>
 		
-		<view v-if="type=='ayQrcode'" style="margin-top: 26upx;margin: 40upx;">
-			<ayQrcode ref="qrcode" :modal="modal_qr" :url="url" @hideQrcode="hideQrcode" :height="300" :width="300"/>
-		</view>
 		
 		<ayDropdownList v-if="type=='ayDropdownList'" :maxheight="700" :marginLeft="152" :width="70" :isShow="isShow_ddList" :list="seleTypeList" @selectItem="selectItem_ddList">
 			<view style="margin-left: 40upx;" @tap="showDropdownList">自定义触发有下拉框的内容</view>
 		</ayDropdownList>
 		
-		<ayPopTips id="popup1" ref="popup1" v-if="type=='ayPopTips_center'" type="center" @closeModal="closeModal_tips" @toConfirm="toConfirm_tips" >
-			<view >
-				<view >自定义内容</view>
+		<view v-if="type=='ayImageUpload'">
+			<ay-image-upload  :list="uploadTipList" @imgAdd="imgAddFun"></ay-image-upload>
+			<view class="cf-btn-m-box"  @tap="toConfirm">
+				<view class="cf-btn-m" :style="{'background-color': themeColor }">完成</view>
+			</view>
+			
+		</view>
+		
+		
+		<view class="cf-shuCenter" v-if="type=='ayQrcode'">
+			<view style="margin: 40upx;">
+				<ayQrcode ref="qrcode" :modal="modal_qr" :url="url" @hideQrcode="hideQrcode" :height="300" :width="300" />
+			</view>
+			<view class="cf-hengCenter input-box">
+				<view style="padding-right: 20upx;">网址:</view>
+				<input name='url' v-model="url" type="text" :maxlength="url_maxlength" :placeholder="url" />
+			</view>
+			<view class="cf-btn-m-box"  @tap="toCrtQrCode">
+				<view class="cf-btn-m" :style="{'background-color': themeColor }">生成二维码</view>
+			</view>
+			
+		</view>
+		
+		
+		
+		
+		<ayPopTips id="popup1" ref="popup1" v-if="type=='ayPopTips_center'" type="center" @closeModal="closeModal_tips"
+		 @toConfirm="toConfirm_tips">
+			<view>
+				<view>欢迎来到自定义内容</view>
 			</view>
 		</ayPopTips>
 		
-		<ayPopTips id="popup1" ref="popup1" v-if="type=='ayPopTips_bottom'" type="bottom" @closeModal="closeModal_tips" @toConfirm="toConfirm_tips" >
-			<view >
-				<view >自定义内容</view>
-				<view  style="color: #FF0000;">自定义内容</view>
+		<ayPopTips id="popup1" ref="popup1" v-if="type=='ayPopTips_bottom'" type="bottom" @closeModal="closeModal_tips"
+		 @toConfirm="toConfirm_tips">
+			<view>
+				<view>欢迎来到自定义内容</view>
+				<view style="color: #FF0000;">欢迎来到自定义内容</view>
 			</view>
 		</ayPopTips>
 		
 		<ayCardOne v-if="type=='ayCardOne'">
-			
+		
 		</ayCardOne>
 		<ayCardTwoList v-if="type=='ayCardOneList'" :list="card_list">
-			
+		
 		</ayCardTwoList>
 		<ayCardOneList v-if="type=='ayCardOneList'" :list="card_list">
-			
+		
 		</ayCardOneList>
 		
 		<cartsBall v-if="type=='cartsBall'" ref="cartsBall" :ballColor="'#fff'" :zIndex="6" :endPos="{
@@ -209,13 +233,15 @@
 		    }"
 		 :bg_img="'https://cdn.pixabay.com/photo/2019/11/26/03/35/maple-4653495__340.jpg'"></cartsBall>
 		<view v-if="type=='cartsBall'" @click="drop_cartsBall($event)">
-			<text>跳出来</text>
+			<view class="cf-btn-m-box">
+				<view class="cf-btn-m" :style="{'background-color': themeColor }">点击跳出来</view>
+			</view>
 		</view>
 		
-		<fadeInOut v-if="type=='fadeInOut'"  :list="lottery_list"></fadeInOut>
+		<fadeInOut v-if="type=='fadeInOut'" :list="fade_list"></fadeInOut>
 		
 		<aybg v-if="type=='aybg'" :list="mark_list">
-			
+		
 			<view>自定义内容</view>
 		</aybg>
 	</view>
@@ -424,7 +450,7 @@
 
 				//list_menu : [],
 				isLoaded: false,
-				type: '', ////1旋转2旋转立方体3二十面体4双旋转立方体5旋转魔方
+				type: '', 
 
 				colorName_rd: 'orangeRed', //aqua hotPink lime gold orangeRed
 				list_th: [],
@@ -460,6 +486,11 @@
 			//礼花播放
 			that.play_fw();
 			
+			if(that.type=='ayQrcode'){
+				that.showQrcode();//一加载生成二维码
+			}else if(that.type.substr(0,10)=='ayPopTips_'){
+				this.$refs.popup1.open();//弹出确认框
+			}
 		},
 		// #ifdef MP-WEIXIN
 		//微信小程序的分享
@@ -652,11 +683,7 @@
 				that.fade_list = data.fade_list.data;
 				that.mark_list  = data.mark_list.data;
 				
-				if(that.type=='ayQrcode'){
-					that.showQrcode();//一加载生成二维码
-				}else if(that.type.substr(0,10)=='ayPopTips_'){
-					this.$refs.popup1.open();//弹出确认框
-				}
+				
 			},
 
 		},
