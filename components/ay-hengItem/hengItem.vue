@@ -2,10 +2,23 @@
 	<view class="box">
 		<view class="itemBox" v-for="(item, index) in list" :key="index" @click="toDetailPage({index: index,id:item.id})">
 			<view v-if="item.img">
-				<image :src="item.img" style="width: 50upx;height: 50upx;"></image>
+				<image lazy-load=true :src="item.img" style="width: 50upx;height: 50upx;border-radius: 50%;"></image>
 			</view>
+			
+			<!-- #ifdef MP-WEIXIN -->
+			
+			<view  v-if="item.isKefu" class="kefuBtnBox">
+				<button open-type="contact" @contact="handleContactFun"></button>
+			</view>
+			
+			<!-- #endif -->
 			<view class="name">{{item.name}}</view>
-			<view class="toRightBox">
+			
+			<view v-if="!item.img">
+				<view style="width: 50upx;height: 50upx;border-radius: 50%;"></view>
+			</view>
+			
+			<view>
 				<view class="iconfont icon-you"></view>
 			</view>
 		</view>
@@ -49,6 +62,15 @@
 					};
 					this.$emit('toDetailPage', data);
 				},
+				// #ifdef MP-WEIXIN
+				//客服
+				handleContactFun(e){
+					var that = this;
+					//that.$api.msg('联系客服成功！');
+					//console.log(e.detail.path)
+					//console.log(e.detail.query)
+				},
+				// #endif
 			}
 		}
 	
@@ -57,14 +79,9 @@
 <style lang="scss">
 	.box {
 		background-color: #FFFFFF;
-		.toRightBox{
-			padding-left: 40upx;
-		}
-		.icon-you{
-			font-size: 44upx;
-			color: #323232;
-		}
+		
 		.itemBox {
+			position: relative;
 			display: flex;
 			padding: 18upx 20upx;
 			border-bottom: 2upx solid #EEEEEE;
@@ -79,12 +96,32 @@
 				font-family: PingFang SC;
 			}
 	
-			.toright {
-				width: 35upx;
-				height: 35upx;
+			.icon-you {
+				color: #323232;
+				font-size: 50upx;
 				margin-left: 30upx;
 			}
 		}
 	}
 	
+	.kefuBtnBox button::after {
+		border: none;
+	}
+	
+	.kefuBtnBox {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.kefuBtnBox button {
+		width: 100%;
+		height: 100%;
+		background-color: #FFFFFF;
+	
+		/* 防止按钮点击不生效 */
+		opacity: 0.1;
+		z-index: 2;
+	}
 </style>

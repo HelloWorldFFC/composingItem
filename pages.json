@@ -73,7 +73,24 @@
 					// #endif 
 				}
 			}
+		},
+		{
+			"path": "pages/user/colophon",
+			"style": {
+				"navigationBarTitleText": "版本记录",
+				// #ifdef H5
+				"navigationStyle": "custom",
+				// #endif 
+				"app-plus": {
+					// #ifdef MP-WEIXIN
+					"titleNView": {
+						"type": "transparent"
+					}
+					// #endif 
+				}
+			}
 		}
+		
 		
 	],
 	"globalStyle": {
