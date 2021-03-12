@@ -11,6 +11,7 @@
 </template>
 
 <script>
+	import menu from '@/js/show.js';
 	import ayrecord from '@/components/ay-record/ay-record.vue';
 	import shortcutNav from "@/components/ay-shortcutNav/shortcutNav.vue"
 	export default {
@@ -51,9 +52,18 @@
 		},
 		onLoad() {
 			let that = this;
+			
+			that.loadData();
 		},
 		methods: {
-
+			async loadData() {
+				let that = this;
+				let res_home = await menu.res_home;
+				
+				let data = res_home.data;
+				
+				that.list = data.colophon_list.data;
+			},
 		}
 
 	}

@@ -1,13 +1,51 @@
 <template>
 	<view>
-		<view class="user-box" >
-			<aybgimg :isNav="true" themeImg="https://cdn.pixabay.com/photo/2020/04/11/14/42/street-5030692__340.jpg">
+		<view class="user-box">
+			<aybgimg :isNav="true" themeImg="https://cdn.pixabay.com/photo/2019/11/26/03/35/maple-4653495__340.jpg">
+		
+				<view class="img-box">
+					<view class="box-item">
+						<!-- #ifndef MP-WEIXIN -->
+						<image lazy-load="true" :src="imageUrl"></image>
+						<view v-if="!isLogin" class="txt" @tap="toLoginFun">登录</view>
+						<view v-else @tap="toExitFun">
+							<view class="txt">退出</view>
+						</view>
+						<!-- #endif -->
+						<!-- #ifdef MP-WEIXIN -->
+						<image v-if="!isLogin" lazy-load="true" :src="imageUrl"></image>
+						<view v-if="!isLogin" class="txt" @tap="toLoginFun">登录</view>
+						<view v-else @tap="toExitFun">
+							<view>
+								<view class="userinfo-avatar">
+									<open-data type="userAvatarUrl"></open-data>
+								</view>
+		
+								<view class="txt">
+									<open-data type="userNickName"></open-data>
+		
+								</view>
+							</view>
+						</view>
+		
+		
+						<!-- #endif -->
+		
+					</view>
+		
+				</view>
+		
+				<view class="settingBox" @tap="toSite">
+					<view class="iconfont icon-shezhi setting"></view>
+				</view>
+		
 				<view class="nav-box">
 					<shortcutNav :list="shortcutNavList" :hengNumber="3" :backgroundColor="navbackgroundColor" @toDetailPage="toDetailPage_shortcut"></shortcutNav>
 				</view>
 			</aybgimg>
-			
+		
 		</view>
+		
 		<view style="margin-top: 26upx;">
 			<hengItem :list="tipList" @toDetailPage="toDetailPage_tip"></hengItem>
 		</view>
@@ -26,6 +64,7 @@
 		},
 		data() {
 			return {
+				imageUrl: 'https://cdn.pixabay.com/photo/2016/11/23/17/55/beach-1854072__340.jpg',
 				shortcutNavList: [{
 						img: 'https://cdn.pixabay.com/photo/2016/11/23/17/56/decor-1854075__340.jpg',
 						name: '动画', //立人
@@ -76,6 +115,12 @@
 			let that = this;
 		},
 		methods: {
+			toLoginFun(){
+				
+			},
+			toExitFun(){
+				
+			},
 			toDetailPage_tip(e) {
 				let that = this;
 				let list = e.list;
@@ -113,8 +158,59 @@
 </script>
 
 <style lang="scss">
-	.user-box {
+	.settingBox {
+		width: 20%;
 	
+		.setting {
+			color: #999999;
+			font-size: 60upx;
+		}
+	
+	}
+	.user-box {
+		
+		.img-box{
+			position: absolute;
+			top: 60upx;
+			left: 0upx;
+			width: 100%;
+			z-index: 2;
+			width: 100%;
+			.box-item{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				.txt{
+					color: #FFFFFF;
+					font-size: 32upx;
+					margin-top: 20upx;
+					font-weight: bold;
+				}
+			}
+			
+		}
+		.settingBox {
+			position: absolute;
+			top: 20upx;
+			right: 0upx;
+			z-index: 2;
+			width: 14%;
+		
+			.setting {
+				// color: #999999;
+				color: #FFFFFF;
+				font-size: 60upx;
+			}
+		
+		}
+		.img-box image{
+			width: 126upx;
+			height: 126upx;
+			border-radius: 50%;
+			border: 2px solid #FFFFFF;
+		}
 		.nav-box {
 			position: absolute;
 			bottom: 0upx;
@@ -125,5 +221,6 @@
 			margin: 0upx auto;
 			padding: 0upx 40upx;
 		}
+		
 	}
 </style>
