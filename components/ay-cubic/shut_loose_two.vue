@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="box" :style="style_box">
+		<view class="box-cub-loos-t" :style="style_box">
 			<view :class="index==0?'out_front':(index==1?'out_back':(index==2?'out_left':(index==3?'out_right':(index==4?'out_top':(index==5?'out_bottom':(index==6?'in_front in-box':(index==7?'in_back in-box':(index==8?'in_left in-box':(index==9?'in_right in-box':(index==10?'in_top in-box':'in_bottom in-box'))))))))))"
 			 v-for="(item,index) in list" :key="index">
 				<image lazy-load="true" :src="item.img" class="out_pic" :class="((index==0)||(index==1)||(index==2)||(index==3)||(index==4)||(index==5))?'out_pic':'in_pic'" :style="((index==0)||(index==1)||(index==2)||(index==3)||(index==4)||(index==5))?style_w_h:style_w_h_in">
@@ -131,7 +131,7 @@
 </script>
 
 <style lang="scss">
-	.box {
+	.box-cub-loos-t {
 		width: 200upx;
 		height: 200upx;
 		margin: 200upx auto;
@@ -140,7 +140,7 @@
 		animation-timing-function: linear;
 	}
 
-	.box view {
+	.box-cub-loos-t view {
 		position: absolute;
 		transition: all .4s;
 	}
@@ -156,7 +156,7 @@
 		height: 100upx;
 	}
 
-	.box .in-box {
+	.box-cub-loos-t .in-box {
 		display: block;
 		position: absolute;
 		width: 100upx;
@@ -225,53 +225,53 @@
 	}
 
 	/*外面的图片散开*/
-	.box:hover .out_front {
+	.box-cub-loos-t:hover .out_front {
 		transform: translateZ(200upx);
 	}
 
-	.box:hover .out_back {
+	.box-cub-loos-t:hover .out_back {
 		transform: translateZ(-200upx);
 	}
 
-	.box:hover .out_left {
+	.box-cub-loos-t:hover .out_left {
 		transform: rotateY(90deg) translateZ(200upx);
 	}
 
-	.box:hover .out_right {
+	.box-cub-loos-t:hover .out_right {
 		transform: rotateY(-90deg) translateZ(200upx);
 	}
 
-	.box:hover .out_top {
+	.box-cub-loos-t:hover .out_top {
 		transform: rotateX(90deg) translateZ(200upx);
 	}
 
-	.box:hover .out_bottom {
+	.box-cub-loos-t:hover .out_bottom {
 		transform: rotateX(-90deg) translateZ(200upx);
 	}
 
 
 	/*里面的图片散开*/
-	.box:hover .in_front {
+	.box-cub-loos-t:hover .in_front {
 		transform: translateZ(100upx);
 	}
 
-	.box:hover .in_back {
+	.box-cub-loos-t:hover .in_back {
 		transform: translateZ(-100upx);
 	}
 
-	.box:hover .in_left {
+	.box-cub-loos-t:hover .in_left {
 		transform: rotateY(90deg) translateZ(100upx);
 	}
 
-	.box:hover .in_right {
+	.box-cub-loos-t:hover .in_right {
 		transform: rotateY(-90deg) translateZ(100upx);
 	}
 
-	.box:hover .in_top {
+	.box-cub-loos-t:hover .in_top {
 		transform: rotateX(90deg) translateZ(100upx);
 	}
 
-	.box:hover .in_bottom {
+	.box-cub-loos-t:hover .in_bottom {
 		transform: rotateX(-90deg) translateZ(100upx);
 	}
 </style>

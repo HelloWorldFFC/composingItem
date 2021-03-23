@@ -1,9 +1,9 @@
 <template>
 	<view>
 		
-		<view class="box">
-			<view class="a">
-				<view class="b"><text>{{title}}</text></view>
+		<view class="box-bg-svn">
+			<view class="a-bg-svn">
+				<view class="b-bg-svn"><text>{{title}}</text></view>
 			</view>
 		</view>
 	</view>
@@ -39,20 +39,20 @@
 </script>
 
 <style lang="scss">
-	.box{
+	.box-bg-svn{
 		background-color: #EEEEEE;
 		/* css变量 */
 		--main-color: #33CCCC;
 	}
 
-	.a {
+	.a-bg-svn {
 		display: flex;
 		justify-content: center;
 		padding: 30rpx 0;
 		width: 750rpx;
 	}
 
-	.a:before {
+	.a-bg-svn:before {
 		content: "";
 		border: 25px solid;
 		border-color: #ccc #ccc #ccc transparent;
@@ -60,7 +60,7 @@
 		float: left;
 	}
 
-	.a:after {
+	.a-bg-svn:after {
 		content: "";
 		border: 25px solid;
 		border-color: #ccc transparent #ccc #ccc;
@@ -68,7 +68,7 @@
 		float: left;
 	}
 
-	.a text {
+	.a-bg-svn text {
 		display: inline-block;
 		width: 50px;
 		line-height: 50px;
@@ -79,7 +79,7 @@
 		transition: background-color 0.5s, margin-top 0.3s;
 	}
 
-	.a .b {
+	.a-bg-svn .b-bg-svn {
 		color: #000;
 		text-decoration: none;
 		height: 60px;
@@ -88,7 +88,7 @@
 		float: left;
 	}
 
-	.a text:before {
+	.a-bg-svn text:before {
 		content: "";
 		border-right: 10px solid #000;
 		border-bottom: 10px solid #ccc;
@@ -97,7 +97,7 @@
 		left: 0px;
 	}
 
-	.a text:after {
+	.a-bg-svn text:after {
 		content: "";
 		border-left: 10px solid #000;
 		border-bottom: 10px solid #ccc;
@@ -106,7 +106,7 @@
 		right: 0px;
 	}
 
-	.a .b:hover text {
+	.a-bg-svn .b-bg-svn:hover text {
 		margin-top: 0px;
 		background:  var(--main-color);
 	}

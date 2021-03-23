@@ -1,8 +1,8 @@
 <template>
-	<view class="box-view">
-		<view style="position: relative;" class="box-view">
-			<view class="box box-view">
-				<view v-for="(item,index) in 6" :key="index" class="box-view">
+	<view class="box-view-cub-twty">
+		<view style="position: relative;" class="box-view-cub-twty">
+			<view class="box-cub-twty box-view-cub-twty">
+				<view v-for="(item,index) in 6" :key="index" class="box-view-cub-twty">
 					<span v-for="(item,index) in 5" :key="index"></span>
 				</view>
 			</view>
@@ -17,11 +17,11 @@
 <style lang="scss">
 	
 
-	.box {
+	.box-cub-twty {
 		animation: ani 4s linear infinite;
 	}
 
-	.box-view {
+	.box-view-cub-twty {
 		transform-style: preserve-3d;
 		transform: translate(-50%, -50%) rotate3d(0, 1, 0, 72deg);
 		position: absolute;
@@ -80,23 +80,23 @@
 		transform: rotate3d(0, 1, 0, 360deg) rotate3d(1, 0, 0, 51.5deg);
 	}
 
-	.box view:nth-child(1) {
+	.box-cub-twty view:nth-child(1) {
 		transform: translateY(51upx) rotateY(108deg) rotateX(116deg) translateZ(31upx);
 	}
 
-	.box view:nth-child(2) {
+	.box-cub-twty view:nth-child(2) {
 		transform: translateY(51upx) rotateY(180deg) rotateX(116deg) translateZ(31upx);
 	}
 
-	.box view:nth-child(3) {
+	.box-cub-twty view:nth-child(3) {
 		transform: translateY(51upx) rotateY(252deg) rotateX(116deg) translateZ(31upx);
 	}
 
-	.box view:nth-child(4) {
+	.box-cub-twty view:nth-child(4) {
 		transform: translateY(51upx) rotateY(324deg) rotateX(116deg) translateZ(31upx);
 	}
 
-	.box view:nth-child(5) {
+	.box-cub-twty view:nth-child(5) {
 		transform: translateY(51upx) rotateY(396deg) rotateX(116deg) translateZ(31upx);
 	}
 

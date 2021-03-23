@@ -6,7 +6,7 @@
 		<!-- #ifdef MP-ALIPAY -->
 		<canvas :id="cid" :width="cpSize" :height="cpSize" class="ay-qrcode-canvas" />
 		<!-- #endif -->
-		<image v-show="show" :src="result" :style="{width:cpSize+'px',height:cpSize+'px'}" />
+		<!-- <image v-show="show" :src="result" :style="{width:cpSize+'px',height:cpSize+'px'}" /> -->
 	</view>
 </template>
 
@@ -86,7 +86,7 @@ export default {
 		}
 	},
 	methods: {
-		_makeCode() {
+		crtQrCode() {
 			let that = this
 			if (!this._empty(this.val)) {
 				qrcode = new QRCode({
@@ -161,7 +161,7 @@ export default {
 				this.cSize = n
 				if (!this._empty(this.val)) {
 					setTimeout(() => {
-						this._makeCode()
+						this.crtQrCode()
 					}, 100);
 				}
 			}
@@ -170,7 +170,7 @@ export default {
 			if (this.onval) {
 				if (n != o && !this._empty(n)) {
 					setTimeout(() => {
-						this._makeCode()
+						this.crtQrCode()
 					}, 0);
 				}
 			}
@@ -189,7 +189,7 @@ export default {
 		if (this.loadMake) {
 			if (!this._empty(this.val)) {
 				setTimeout(() => {
-					this._makeCode()
+					this.crtQrCode()
 				}, 0);
 			}
 		}
@@ -200,10 +200,10 @@ export default {
 .ay-qrcode {
   position: relative;
 }
-.ay-qrcode-canvas {
+/* .ay-qrcode-canvas {
   position: fixed;
   top: -99999upx;
   left: -99999upx;
   z-index: -99999;
-}
+} */
 </style>

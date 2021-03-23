@@ -1,7 +1,7 @@
 <template>
 	<view>
-		<view class="box">
-			<span class="box4" :style="{background:themeColor}">{{title}}</span>
+		<view class="box-bg-two">
+			<span class="box4-bg-two" :style="{background:themeColor}">{{title}}</span>
 			<slot />
 		</view>
 		
@@ -39,7 +39,7 @@
 
 <style lang="scss">
 	
-	.box {
+	.box-bg-two {
 		display: flex;
 		justify-content: center;
 		margin-left: 10px;
@@ -52,7 +52,7 @@
 		
 	}
 
-	.box:nth-child(even) {
+	.box-bg-two:nth-child(even) {
 		margin-right: 4%;
 	}
 
@@ -61,12 +61,12 @@
 			width: 100%
 		}
 
-		.box:nth-child(even) {
+		.box-bg-two:nth-child(even) {
 			margin-right: 0%;
 		}
 	}
 	
-	.box4 {
+	.box4-bg-two {
 		position: absolute;
 		left: 0;
 		top: 15px;
@@ -74,14 +74,14 @@
 		box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.5);
 	}
 	
-	.box4:before,
-	.box4:after {
+	.box4-bg-two:before,
+	.box4-bg-two:after {
 		position: absolute;
 		content: "";
 		display: block;
 	}
 
-	.box4:before {
+	.box4-bg-two:before {
 		width: 7px;
 		height: 100%;
 		padding: 0 0 7px;
@@ -91,7 +91,7 @@
 		border-radius: 5px 0 0 5px;
 	}
 
-	.box4:after {
+	.box4-bg-two:after {
 		width: 5px;
 		height: 5px;
 		background: rgba(0, 0, 0, 0.35);

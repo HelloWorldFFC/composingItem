@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="box" :style="{width:width + 'rpx'}">
+		<view class="box-card-one" :style="{width:width + 'rpx'}">
 
 			<view class="title" :style="{'background-image': 'radial-gradient(circle at ' +(width/2) + 'rpx -16rpx, #fff 40rpx, '+ themeColor + ' 42rpx)'}">
 				{{title}}
@@ -14,7 +14,7 @@
 				</scroll-view>
 			</view>
 
-			<view class="btn-box" @tap="btnEvent">
+			<view class="btn-box-card-one" @tap="btnEvent">
 				<button :style="{'background-color':themeColor}">立即使用</button>
 			</view>
 		</view>
@@ -68,7 +68,7 @@
 </script>
 
 <style lang="scss">
-	.box {
+	.box-card-one {
 		background-color: #E0E0E0;
 		margin: 60upx auto;
 		width: 600upx;
@@ -116,7 +116,7 @@
 
 
 
-	.btn-box {
+	.btn-box-card-one {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -124,7 +124,7 @@
 		padding-bottom: 20upx;
 	}
 
-	.btn-box button {
+	.btn-box-card-one button {
 		/* 重置按钮样式 */
 		border: none;
 		box-shadow: none;

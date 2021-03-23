@@ -1,9 +1,9 @@
 <template>
 	  <!-- :style="style" -->
 	<view >
-		<view class="box">
+		<view class="box-shctnav-td">
 			<block v-for="(item,index) in list"  :key="index" >
-				<view class="box-item" :class="img_last" :style="style_item"  @tap="toDetailPage({index: index,id:item.id})">
+				<view class="box-item-shctnav-td" :class="img_last" :style="style_item"  @tap="toDetailPage({index: index,id:item.id})">
 					<image lazy-load="true"  :src="item.img"></image>
 					<view class="name" :style="style_name" >{{item.name}}</view>
 				</view>
@@ -128,13 +128,13 @@
 </script>
 
 <style lang="scss">
-	.box {
+	.box-shctnav-td {
 		flex-wrap: wrap;
 		display: flex;
 		justify-content: center;
 		width: 100%;
 		
-		.box-item {
+		.box-item-shctnav-td {
 			padding: 20rpx 0;
 			margin: 10rpx;
 			display: flex;

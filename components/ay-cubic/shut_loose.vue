@@ -1,8 +1,8 @@
 <template>
 	<view>
-		<view class="eyes">
-			<view class="box" :style="style_box">
-				<view class="box-item" :style="style_w_h" :class="'div'+(index+1)" v-for="(item,index) in list" :key="index">
+		<view class="eyes-cub-loos">
+			<view class="box-cub-loos" :style="style_box">
+				<view class="box-item-cub-loos" :style="style_w_h" :class="'div'+(index+1)" v-for="(item,index) in list" :key="index">
 					<image :style="style_w_h" lazy-load="true" :src="item.img">
 				</view>
 			</view>
@@ -111,11 +111,11 @@
 </script>
 
 <style lang="scss">
-	.eyes {
+	.eyes-cub-loos {
 		perspective: 1000upx;
 	}
 
-	.box {
+	.box-cub-loos {
 		/*设置3D效果*/
 		transform-style: preserve-3d;
 		/*盒子的大小*/
@@ -131,7 +131,7 @@
 		animation-timing-function: linear;
 	}
 
-	.box .box-item {
+	.box-cub-loos .box-item-cub-loos {
 		width: 200upx;
 		height: 200upx;
 		opacity: 1;
@@ -147,32 +147,32 @@
 	// 	height: 200upx;
 	// }
 	/*调整位置，制作成一个六边形*/
-	.box .div1 {
+	.box-cub-loos .div1 {
 		background: green;
 		transform: translateZ(100upx);
 	}
 
-	.box .div2 {
+	.box-cub-loos .div2 {
 		background: green;
 		transform: translateZ(-100upx);
 	}
 
-	.box .div3 {
+	.box-cub-loos .div3 {
 		background: green;
 		transform: rotateX(90deg) translateZ(100upx);
 	}
 
-	.box .div4 {
+	.box-cub-loos .div4 {
 		background: green;
 		transform: rotateX(270deg) translateZ(100upx);
 	}
 
-	.box .div5 {
+	.box-cub-loos .div5 {
 		background: green;
 		transform: rotateY(-90deg) translateZ(100upx);
 	}
 
-	.box .div6 {
+	.box-cub-loos .div6 {
 		background: green;
 		transform: rotateY(90deg) translateZ(100upx);
 	}
@@ -189,27 +189,27 @@
 	}
 
 	/*给正方体添加一个hover效果*/
-	.box:hover .div1 {
+	.box-cub-loos:hover .div1 {
 		transform: translateZ(200upx);
 	}
 
-	.box:hover .div2 {
+	.box-cub-loos:hover .div2 {
 		transform: translateZ(-200upx);
 	}
 
-	.box:hover .div3 {
+	.box-cub-loos:hover .div3 {
 		transform: rotateX(90deg) translateZ(200upx);
 	}
 
-	.box:hover .div4 {
+	.box-cub-loos:hover .div4 {
 		transform: rotateX(270deg) translateZ(200upx);
 	}
 
-	.box:hover .div5 {
+	.box-cub-loos:hover .div5 {
 		transform: rotateY(-90deg) translateZ(200upx);
 	}
 
-	.box:hover .div6 {
+	.box-cub-loos:hover .div6 {
 		transform: rotateY(90deg) translateZ(200upx)
 	}
 </style>

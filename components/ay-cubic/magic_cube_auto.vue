@@ -1,8 +1,8 @@
 <template>
 	<view>
 
-		<view class="box" :style="style_box">
-			<view class="box-item" :style="style_w_h" :class="'dv'+(index+1)" v-for="(item,index) in 6" :key="index">
+		<view class="box-cub-auto" :style="style_box">
+			<view class="box-item-cub-auto" :style="style_w_h" :class="'dv'+(index+1)" v-for="(item,index) in 6" :key="index">
 				<label :style="style_box_item" v-for="(item2,index2) in 9" :key="index2">
 					{{index2+1}}
 				</label>
@@ -108,7 +108,7 @@
 </script>
 
 <style lang="scss">
-	.box {
+	.box-cub-auto {
 		width: 300upx;
 		height: 300upx;
 		margin: 150upx auto;
@@ -118,7 +118,7 @@
 		/*动画效果*/
 		animation: rotate 10s linear infinite;
 	}
-	.box-item{
+	.box-item-cub-auto{
 		width: 300upx;
 		height: 300upx;
 		position: absolute;

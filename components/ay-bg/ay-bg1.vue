@@ -1,7 +1,7 @@
 <template>
 	<view>
-		<view class="box">
-			<view class="wrap"><span class="box6" :style="style">{{title}}</span></view>
+		<view class="box-bg-one">
+			<view class="wrap-bg-one"><span class="box6-bg-one" :style="style">{{title}}</span></view>
 			<slot />
 		</view>
 		
@@ -54,7 +54,7 @@
 		background-color: #FFFFFF;
 	}
 
-	.box {
+	.box-bg-one {
 		display: flex;
 		justify-content: center;
 		margin-left: 10px;
@@ -67,7 +67,7 @@
 		
 	}
 
-	.box:nth-child(even) {
+	.box-bg-one:nth-child(even) {
 		margin-right: 4%;
 	}
 
@@ -76,12 +76,12 @@
 			width: 100%
 		}
 
-		.box:nth-child(even) {
+		.box-bg-one:nth-child(even) {
 			margin-right: 0%;
 		}
 	}
 
-	.wrap {
+	.wrap-bg-one {
 		width: 100%;
 		height: 188px;
 		position: absolute;
@@ -90,7 +90,7 @@
 		overflow: hidden;
 	}
 
-	.wrap:before {
+	.wrap-bg-one:before {
 		content: "";
 		display: block;
 		border-radius: 8px 8px 0px 0px;
@@ -101,7 +101,7 @@
 		background: #4D6530;
 	}
 
-	.wrap:after {
+	.wrap-bg-one:after {
 		content: "";
 		display: block;
 		border-radius: 0px 8px 8px 0px;
@@ -113,7 +113,7 @@
 		background: #4D6530;
 	}
 
-	.box6 {
+	.box6-bg-one {
 		display: inline-block;
 		text-align: center;
 		width: 200px;

@@ -243,6 +243,12 @@
 				})
 			},
 			toDetailPage(e) {
+				
+				uni.switchTab({
+					url:'/pages/show/index'
+				})
+				return ;
+				
 				//console.log('22222222222'+ JSON.stringify(e))
 				let list = e.list;
 				let idx = e.curIndex;

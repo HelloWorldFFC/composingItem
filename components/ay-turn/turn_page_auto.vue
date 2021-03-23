@@ -1,14 +1,14 @@
 <template>
 	<view>
-		<view class="box" :style="{'margin-left': (width/3)*2+ 'rpx' }">
-			<view class="box-ct" :style="style">
-				<view :style="{border: '1px solid '+ themeColor }" class="page bk-ct">结束</view>
-				<view class="page bk-c" v-for="(item,index) in list" :key="index"  :style="[{border: '1px solid '+ themeColor  },{'animation-duration' :(list.length+index)+'s'},{'animation-delay' : (list.length-index)+'s'}]">
-					<view class="txt-box">
+		<view class="box-turn-pg-auto" :style="{'margin-left': (width/3)*2+ 'rpx' }">
+			<view class="box-ct-turn-pg-auto" :style="style">
+				<view :style="{border: '1px solid '+ themeColor }" class="page-turn-pg-auto bk-ct-turn-pg-auto">结束</view>
+				<view class="page-turn-pg-auto bk-c-turn-pg-auto" v-for="(item,index) in list" :key="index"  :style="[{border: '1px solid '+ themeColor  },{'animation-duration' :(list.length+index)+'s'},{'animation-delay' : (list.length-index)+'s'}]">
+					<view class="txt-box-turn-pg-auto">
 						<view>{{item.txt}}</view>
 					</view>
 
-					<view class="btm-box">
+					<view class="btm-box-turn-pg-auto">
 						<view class="btm-box2">
 
 							<view class="btn-bk-l">{{item.size}}</view>
@@ -16,8 +16,8 @@
 
 					</view>
 				</view>
-				<view class="page bk-cover" :style="style_cover">
-					<view class="txt-box">
+				<view class="page-turn-pg-auto bk-cover-turn-pg-auto" :style="style_cover">
+					<view class="txt-box-turn-pg-auto">
 						<view class="tit">{{cover.txt}}</view>
 						<image v-if="cover.img" :style="style_img" lazy-load="true" @error="onImageError(cover)" :src="cover.img" />
 					</view>
@@ -130,7 +130,7 @@
 </script>
 
 <style lang="scss">
-	.txt-box {
+	.txt-box-turn-pg-auto {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -145,13 +145,13 @@
 		}
 	}
 
-	.txt-box image {
+	.txt-box-turn-pg-auto image {
 		width: 90rpx;
 		height: 90rpx;
 		border-radius: 50%;
 	}
 
-	.btm-box {
+	.btm-box-turn-pg-auto {
 		position: fixed;
 		left: 0;
 		bottom: 10upx;
@@ -171,12 +171,12 @@
 	}
 
 
-	.box {
+	.box-turn-pg-auto {
 
 		transform-style: preserve-3d;
 	}
 
-	.box-ct {
+	.box-ct-turn-pg-auto {
 
 		position: relative;
 		margin: 0 auto;
@@ -184,7 +184,7 @@
 		transform-style: preserve-3d;
 	}
 
-	.page {
+	.page-turn-pg-auto {
 		width: 100%;
 		height: 100%;
 		position: absolute;
@@ -198,7 +198,7 @@
 
 	}
 
-	.bk-cover {
+	.bk-cover-turn-pg-auto {
 		font-size: 30px;
 		color: #ffffff;
 
@@ -210,14 +210,14 @@
 		animation-name: roll;
 	}
 
-	.bk-ct {
+	.bk-ct-turn-pg-auto {
 		font-size: 30px;
 		background-color: #fff;
 		color: #33363C;
 
 	}
 
-	.bk-c {
+	.bk-c-turn-pg-auto {
 		background-color: #fff;
 		color: #33363C;
 

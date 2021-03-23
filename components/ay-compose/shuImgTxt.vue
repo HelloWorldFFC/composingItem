@@ -1,13 +1,13 @@
 <template>
 	<view>
-		<view class="list">
-			<view v-for="(item, index) in list" :style="{width: itemWidth +'%' }" :key="index" class="item" @click="toDetailPage({index: index,id:item.id})">
+		<view class="list-comp-sit">
+			<view v-for="(item, index) in list" :style="{width: itemWidth +'%' }" :key="index" class="item-comp-sit" @click="toDetailPage({index: index,id:item.id})">
 				<view class="imageBox">
-					<image :src="item.img" @error="onImageError(item,index)" mode="aspectFill"></image>
+					<image lazy-load="true" :src="item.img" @error="onImageError(item,index)" mode="aspectFill"></image>
 				</view>
 				<view class="g-item" style="position: relative;">
 					<view class="itemBox">
-						<view class="vTitleBox " :class="isLongTitle?'vTitleADotBox':''">{{item.subtitle}}</view>
+						<view class="vTitleBox">{{item.subtitle}}</view>
 
 						<view class="vdirectTwoBox">
 							<view class="vdirectTwo1 addDot">{{item.directTwo1}}</view>
@@ -27,7 +27,7 @@
 
 					</view>
 					<view class="isRemarkBox" style="position: absolute;top:10upx;left: 35upx;" v-if="item.isRemark">
-						<image :src="item.remarkImg"></image>
+						<image lazy-load="true" :src="item.remarkImg"></image>
 					</view>
 				</view>
 
@@ -54,11 +54,6 @@
 			themeColor: {
 				type: String,
 				default: '#33CCCC',
-			},
-			//题目文字大于2行了，请置此属性为true
-			isLongTitle: {
-				type: [Boolean, String],
-				default: false
 			},
 		},
 		watch: {
@@ -139,7 +134,7 @@
 
 <style lang="scss">
 	/* 列表 */
-	.list {
+	.list-comp-sit {
 		// margin-bottom: 40upx;
 		display: flex;
 		flex-wrap: wrap;
@@ -150,7 +145,7 @@
 		// margin: 0 10upx 0upx 10upx;
 		width: 100%;
 
-		.item {
+		.item-comp-sit {
 			display: flex;
 			flex-direction: column;
 
@@ -193,16 +188,7 @@
 				font-size: 30upx;
 				padding: 6upx 0;
 			}
-			
-			.vTitleADotBox
-			{
-				text-align: start;
-				height: 94rpx;
-				display: -webkit-box;
-				-webkit-box-orient: vertical;
-				-webkit-line-clamp: 2;
-				overflow: hidden;
-			}
+
 
 
 			.vdirectOneBox {

@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="box" :style="[{'background-image': 'radial-gradient(circle at 2rpx 16rpx, transparent 12rpx, '+ themeColor+' 12rpx, '+ themeColor+' 0rpx),radial-gradient(circle at 398rpx 16rpx, transparent 12rpx, '+ themeColor+' 12rpx, '+ themeColor+' 0rpx)'}]">{{title}}</view>
+		<view class="box-card-two" :style="[{'background-image': 'radial-gradient(circle at 2rpx 16rpx, transparent 12rpx, '+ themeColor+' 12rpx, '+ themeColor+' 0rpx),radial-gradient(circle at 398rpx 16rpx, transparent 12rpx, '+ themeColor+' 12rpx, '+ themeColor+' 0rpx)'}]">{{title}}</view>
 	
 	</view>
 </template>
@@ -37,7 +37,7 @@
 </script>
 
 <style lang="scss">
-	.box {
+	.box-card-two {
 		position: relative;
 		height: 320upx;
 		margin: 100upx 20upx;
@@ -56,7 +56,7 @@
 		cursor: pointer;
 	}
 	
-	.box::before {
+	.box-card-two::before {
 		position: absolute;
 		content: "";
 		left: 480upx;
@@ -66,7 +66,7 @@
 		border-left: 2upx dashed #fff;
 	}
 	
-	.box::after {
+	.box-card-two::after {
 		position: absolute;
 		content: "立即领取";
 		font-size: 52upx;

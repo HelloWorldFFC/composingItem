@@ -1,15 +1,15 @@
 <template>
 	<view>
-		<view class='box' :style="style">
-			<view class='box_item' v-for="(item,index) in list_dyc" :key="index" @touchstart='touchstart' @touchend="touchend"
+		<view class='box-turn-pg' :style="style">
+			<view class='box_item-turn-pg' v-for="(item,index) in list_dyc" :key="index" @touchstart='touchstart' @touchend="touchend"
 			 :animation="index === 0 ? animationData : ''">
 
-				<view class="txt-box">
+				<view class="txt-box-turn-pg">
 					<view :class="item.size==''?'tit':''">{{item.txt}}</view>
 					<image v-if="item.img" :style="style_img" lazy-load="true" @error="onImageError(item)" :src="item.img" />
 				</view>
 
-				<view class="btm-box">
+				<view class="btm-box-turn-pg">
 					<view class="btm-box2">
 
 						<view class="btn-bk-l">{{item.size}}</view>
@@ -188,7 +188,7 @@
 </script>
 
 <style lang="scss">
-	.txt-box {
+	.txt-box-turn-pg {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -202,7 +202,7 @@
 		}
 	}
 
-	.btm-box {
+	.btm-box-turn-pg {
 		position: fixed;
 		left: 0;
 		bottom: 10upx;
@@ -221,19 +221,19 @@
 		}
 	}
 
-	.txt-box image {
+	.txt-box-turn-pg image {
 		width: 90rpx;
 		height: 90rpx;
 		border-radius: 50%;
 	}
 
-	.box {
+	.box-turn-pg {
 		position: relative;
 		width: 400upx;
 		height: 700upx;
 	}
 
-	.box .box_item {
+	.box-turn-pg .box_item-turn-pg {
 		position: absolute;
 		width: 70%;
 		height: 60%;
@@ -247,22 +247,22 @@
 		box-shadow: 1px 1px 0px 0px rgba(0, 0, 5, 1);
 	}
 
-	.box_item:nth-child(1) {
+	.box_item-turn-pg:nth-child(1) {
 		z-index: 4;
 		transform: translateX(-53%) translateY(-50%);
 	}
 
-	.box_item:nth-child(2) {
+	.box_item-turn-pg:nth-child(2) {
 		z-index: 3;
 		transform: translateX(-53%) translateY(-50%);
 	}
 
-	.box_item:nth-child(3) {
+	.box_item-turn-pg:nth-child(3) {
 		z-index: 2;
 		transform: translateX(-50%) translateY(-51%);
 	}
 
-	.card_item:nth-child(4) {
+	.card_item-turn-pg:nth-child(4) {
 		z-index: 1;
 		transform: translateX(-47%) translateY(-52%);
 	}

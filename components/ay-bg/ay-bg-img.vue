@@ -24,7 +24,7 @@
 			
 			themeColor: {
 				type: String,
-				default: '#33CCCC',
+				default: '#ffffff',
 			},
 			themeImg: {
 				type: String,

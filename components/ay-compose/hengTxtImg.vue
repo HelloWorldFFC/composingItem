@@ -1,7 +1,7 @@
 <template>
 	<view>
-		<view class="list">
-			<view v-for="(item, index) in list" :key="index" class="item" @click="toDetailPage({index: index,id:item.id})">
+		<view class="list-comp-hti">
+			<view v-for="(item, index) in list" :key="index" class="item-comp-hti" @click="toDetailPage({index: index,id:item.id})">
 
 				<view class="g-item" style="position: relative;">
 					<view class="">
@@ -22,12 +22,12 @@
 
 					</view>
 					<view class="isRemarkBox" style="position: absolute;top:10upx;left: 35upx;" v-if="item.isRemark">
-						<image :src="item.remarkImg"></image>
+						<image lazy-load="true" :src="item.remarkImg"></image>
 					</view>
 				</view>
 
 				<view class="imageBox">
-					<image :src="item.img" @error="onImageError(item,index)" mode="aspectFill"></image>
+					<image lazy-load="true" :src="item.img" @error="onImageError(item,index)" mode="aspectFill"></image>
 				</view>
 
 
@@ -97,13 +97,13 @@
 
 <style lang="scss">
 	/* 列表 */
-	.list {
+	.list-comp-hti {
 		margin-bottom: 40upx;
 		flex-direction: column;
 		padding: 0 15upx;
 		background: #fff;
 
-		.item {
+		.item-comp-hti {
 			display: flex;
 			flex-direction: row;
 			width: 100%;

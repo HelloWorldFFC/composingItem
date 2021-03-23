@@ -1,8 +1,8 @@
 <template>
 	<view>
 		
-		<view class="box">
-			<span class="box1"><span>{{title}}</span></span>
+		<view class="box-bg-six">
+			<span class="box1-bg-six"><span>{{title}}</span></span>
 			<view style="margin-top: 66upx;">
 				<slot />
 			</view>
@@ -42,7 +42,7 @@
 
 <style lang="scss">
 	
-	.box {
+	.box-bg-six {
 		display: flex;
 		justify-content: center;
 		margin-left: 10px;
@@ -57,7 +57,7 @@
 		--f-color: #fff;
 	}
 
-	.box:nth-child(even) {
+	.box-bg-six:nth-child(even) {
 		margin-right: 4%;
 	}
 
@@ -66,18 +66,18 @@
 			width: 100%
 		}
 
-		.box:nth-child(even) {
+		.box-bg-six:nth-child(even) {
 			margin-right: 0%;
 		}
 	}
 
-	.box1 {
+	.box1-bg-six {
 		position: absolute;
 		top: -6px;
 		right: 10px;
 	}
 
-	.box1:after {
+	.box1-bg-six:after {
 		position: absolute;
 		content: "";
 		display: block;
@@ -88,7 +88,7 @@
 		border-top: 10px solid var(--main-color);
 	}
 
-	.box1 span {
+	.box1-bg-six span {
 		position: relative;
 		display: inline-block;
 		text-align: center;
@@ -100,14 +100,14 @@
 		width: 90px;
 	}
 
-	.box1 span:before,
-	.box1 span:after {
+	.box1-bg-six span:before,
+	.box1-bg-six span:after {
 		position: absolute;
 		content: "";
 		display: block;
 	}
 
-	.box1 span:before {
+	.box1-bg-six span:before {
 		background: var(--main-color);
 		height: 6px;
 		width: 6px;
@@ -115,7 +115,7 @@
 		top: 0;
 	}
 
-	.box1 span:after {
+	.box1-bg-six span:after {
 		background: var(--main-color);
 		height: 6px;
 		width: 8px;

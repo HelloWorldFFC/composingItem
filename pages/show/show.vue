@@ -255,15 +255,23 @@
 			<view>自定义内容</view>
 		</aybg>
 		
-		<aylivehelp v-if="type=='aylivehelp'" 
-		img="https://cdn.pixabay.com/photo/2016/11/29/13/24/balloons-1869816__340.jpg"
-		:show="show_help"
-		@toDetailPage="toDetailPage_help"
-		@close="close_help"
-		:bottom="340"
-		:right="140">
-		
-		</aylivehelp>
+		<scroll-view scroll-y 
+		@scroll="hd_th_scroll"
+		 @scrolltolower="hd_th_scrolllow" 
+		@scrolltoupper="hd_th_scrollup"
+		:style="{ 'max-height': scrollMaxheight + 'px'}">
+		<view style="height: 900px;" v-if="type=='aylivehelp'" @touchmove="hd_th_start" @touchend="hd_th_end">
+			<aylivehelp ref="livehelp1" v-if="type=='aylivehelp'"
+			img="https://cdn.pixabay.com/photo/2016/11/29/13/24/balloons-1869816__340.jpg"
+			:show="show_help"
+			@toDetailPage="toDetailPage_help"
+			@close="close_help"
+			:bottom="340"
+			:right="140">
+			
+			</aylivehelp>
+		</view>
+		</scroll-view>
 		
 	</view>
 
@@ -362,6 +370,8 @@
 		data() {
 			return {
 				//在线客服
+				scroll_last:0,
+				scrollMaxheight: this.vWindowHeight,
 				show_help:true,
 				fade_list: [
 					
@@ -490,7 +500,17 @@
 				bg_img_sl: 'https://cdn.pixabay.com/photo/2019/11/26/03/35/maple-4653495__340.jpg',
 				txt_sc: '',
 				is_fkSati: false,
+				
+				isOnScro: false ,
 			}
+		},
+		onPageScroll:function(e){
+			let that = this;
+			//console.log(e)
+			if(e.scrollTop>200){
+				//that.close_help();
+			}
+			
 		},
 		onLoad(options) {
 			let that = this;
@@ -527,6 +547,28 @@
 		// #endif
 		methods: {
 			//在线客服
+			hd_th_scroll(e){
+				//console.log(e.detail.scrollTop)
+				let scrollTop = e.detail.scrollTop ;
+				//刚往下滑的时候
+				if((e.detail.scrollTop<20)&&(scrollTop>this.scroll_last)){
+					this.$refs.livehelp1.hd_th_start();
+				}
+				this.scroll_last = scrollTop;
+			},
+			hd_th_scrolllow(e){
+				//太短的不应该有这一步
+				// this.$refs.livehelp1.hd_th_end();
+			},
+			hd_th_scrollup(e){
+				this.$refs.livehelp1.hd_th_end();
+			},
+			hd_th_start() {
+				this.$refs.livehelp1.hd_th_start();
+			},
+			hd_th_end() {
+				this.$refs.livehelp1.hd_th_end();
+			},
 			toDetailPage_help(){
 				let that = this;
 			},

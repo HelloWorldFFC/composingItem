@@ -1,9 +1,9 @@
 <template>
 	<view>
-		<view class="list">
-			<view v-for="(item,index) in list" :key="index" class="item" @click="toDetailPage({index: index,id:item.id})">
+		<view class="list-comp-hitt">
+			<view v-for="(item,index) in list" :key="index" class="item-comp-hitt" @click="toDetailPage({index: index,id:item.id})">
 				<view class="imageBox">
-					<image :src="item.img" @error="onImageError(item,index)" mode="aspectFill"></image>
+					<image lazy-load="true" :src="item.img" @error="onImageError(item,index)" mode="aspectFill"></image>
 				</view>
 				<view class="g-item" style="position: relative;">
 					<view class="">
@@ -98,14 +98,14 @@
 
 <style lang="scss">
 	/* 列表 */
-	.list {
+	.list-comp-hitt {
 		// flex-wrap:wrap;
 		
 		flex-direction: column;
 		padding: 0 20upx;
 		background: #fff;
 
-		.item {
+		.item-comp-hitt {
 			display: flex;
 			flex-direction: row;
 			width: 100%;
@@ -131,6 +131,7 @@
 			.g-item {
 				width: 69%;
 				padding-left: 20upx;
+				padding-left: 10upx;
 			}
 
 

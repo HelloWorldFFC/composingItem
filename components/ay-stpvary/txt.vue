@@ -2,7 +2,7 @@
 	<view>
 		<!-- :style="{'background-image': '-webkit-linear-gradient(left, '+txtColor1+', '+txtColor2 +' 10%, '+txtColor3 +' 20%, '+txtColor4 +' 30%, '+ txtColor5 +' 40%, ' +txtColor6 +' 50%, '+ txtColor7+' 60%, '+ txtColor8  +' 70%, '+txtColor9+' 80%, '+txtColor10+' 90%, '+txtColor11+')'}" -->
 
-		<view class="txt" :style="style_box">{{txt}}</view>
+		<view class="txt-stp-txt" :style="style_box">{{txt}}</view>
 	</view>
 </template>
 
@@ -78,7 +78,7 @@
 </script>
 
 <style lang="scss">
-	.txt {
+	.txt-stp-txt {
 		display: block;
 		text-decoration: none;
 		text-align: center;

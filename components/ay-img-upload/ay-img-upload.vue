@@ -18,7 +18,7 @@
 
 <script>
 	//#ifdef APP-PLUS
-	import permit_app from "@/util/permit_app.js";
+	import permit_app from "./permit_app.js";
 	// #endif
 	export default {
 		props: {

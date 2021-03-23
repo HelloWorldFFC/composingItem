@@ -1,12 +1,12 @@
 <template>
 	<view style="position: relative;">
-		<view class='box' :style="style">
+		<view class='box-turn-twd' :style="style">
 			<!--正面-->
-			<view class="box-ct pros" :style="style" :animation="animationMain" @click='rotateFn(1)'>
+			<view class="box-ct-turn-twd pros-turn-twd" :style="style" :animation="animationMain" @click='rotateFn(1)'>
 				<image :style="style" lazy-load="true" :src="pros_img"></image>
 			</view>
 			<!--反面-->
-			<view class="box-ct cons" :style="style" :animation="animationBack" @click='rotateFn(2)'>
+			<view class="box-ct-turn-twd cons-turn-twd" :style="style" :animation="animationBack" @click='rotateFn(2)'>
 				<image :style="style" lazy-load="true" :src="cons_img"></image>
 			</view>
 		</view>
@@ -118,7 +118,7 @@
 </script>
 
 <style lang="scss">
-	.box {
+	.box-turn-twd {
 		position: absolute;
 		top: 18%;
 		left: 50%;
@@ -128,7 +128,7 @@
 		-moz-perspective: 1000;
 	}
 
-	.box-ct {
+	.box-ct-turn-twd {
 		position: absolute;
 		display: flex;
 		justify-content: center;
@@ -148,9 +148,9 @@
 		}
 	}
 
-	.pros {}
+	.pros-turn-twd {}
 
-	.cons {
+	.cons-turn-twd {
 
 		transform: rotateY(-180deg);
 	}

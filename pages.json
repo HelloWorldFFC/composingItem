@@ -6,7 +6,7 @@
 				// #ifdef H5
 				"navigationStyle": "custom",
 				// #endif 
-				"navigationBarTitleText": "排版展示"
+				"navigationBarTitleText": "慢慢向好"
 				
 			}
 		},
@@ -100,25 +100,26 @@
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
-		"selectedColor": "#1296db",
+		"selectedColor": "#33CCCC",
 		"list": [{
 				"text": "首页",
 				"pagePath": "pages/index/index",
-				"iconPath": "static/logo.png",
-				"selectedIconPath": "static/logo.png"
+				"iconPath": "static/home2.png",
+				"selectedIconPath": "static/home.png"
 			},
 			{
 				"pagePath": "pages/show/index",
 				"text": "展示",
-				"iconPath": "static/logo.png",
-				"selectedIconPath": "static/logo.png"
-			},
-			{
-				"pagePath": "pages/user/user",
-				"text": "我的",
-				"iconPath": "static/logo.png",
-				"selectedIconPath": "static/logo.png"
+				"iconPath": "static/show2.png",
+				"selectedIconPath": "static/show.png"
 			}
+			// ,
+			// {
+			// 	"pagePath": "pages/user/user",
+			// 	"text": "我的",
+			// 	"iconPath": "static/logo.png",
+			// 	"selectedIconPath": "static/logo.png"
+			// }
 			
 		]
 	

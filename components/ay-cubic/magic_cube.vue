@@ -1,8 +1,8 @@
 <template>
 
-	<div class="wrap">
-		<div class="zaxis_p"></div>
-		<div class="zaxis_n"></div>
+	<div class="wrap-cub-o">
+		<div class="zaxis_p-cub-o"></div>
+		<div class="zaxis_n-cub-o"></div>
 	</div>
 </template>
 
@@ -37,7 +37,7 @@
 
 				//* 魔方绘制示例
 				var magicBox = new MagicBox(3, 50);
-				magicBox.DrawIn(document.querySelector(".wrap"));
+				magicBox.DrawIn(document.querySelector(".wrap-cub-o"));
 
 				var rotates = GenRotateActions(3, 5);
 				for (var i = 0; i < rotates.length; i++) {
@@ -77,7 +77,7 @@
 </script>
 
 <style lang="scss">
-	.wrap {
+	.wrap-cub-o {
 		transform-style: preserve-3d;
 		width: 300px;
 		height: 300px;
@@ -92,7 +92,7 @@
 	}
 
 	/* z 轴正方向 */
-	.zaxis_p {
+	.zaxis_p-cub-o {
 		position: absolute;
 		width: 300px;
 		height: 1px;
@@ -104,7 +104,7 @@
 	}
 
 	/* z 轴负方向 */
-	.zaxis_n {
+	.zaxis_n-cub-o {
 		position: absolute;
 		width: 300px;
 		height: 1px;
@@ -124,13 +124,13 @@
 		transform-origin: 0 0 0;
 	}
 
-	.cube {
+	.cube-cub-o {
 		position: absolute;
 		/* 子元素版面是需要三维空间的 */
 		transform-style: preserve-3d;
 	}
 
-	.magicBox {
+	.magicBox-cub-o {
 		position: absolute;
 		transform-style: preserve-3d;
 	}

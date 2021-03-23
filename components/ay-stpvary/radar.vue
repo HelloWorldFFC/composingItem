@@ -1,6 +1,6 @@
 <template>
 	<view >
-		<view class="box" :class="'color-'+colorName" :style="style_w_h" ></view>
+		<view class="box-stp-rd" :class="'color-'+colorName" :style="style_w_h" ></view>
 	</view>
 </template>
 
@@ -94,7 +94,7 @@
 	
 	
 	
-	.box {
+	.box-stp-rd {
 		margin: 0upx auto;
 		
 		position: relative;
@@ -104,7 +104,7 @@
 		overflow: hidden;
 	}
 
-	.box:after {
+	.box-stp-rd:after {
 		content: ' ';
 		display: block;
 		width: 50%;

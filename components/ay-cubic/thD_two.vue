@@ -1,7 +1,7 @@
 <template>
 	<view>
-		<view class="box" :style="style_box">
-			<view class="box-item">
+		<view class="box-cub-td-two" :style="style_box">
+			<view class="box-item-cub-td-two">
 				<view v-for="(item,index) in list" :key="index" :style="style_w_h_t">
 					<image :style="style_w_h"  lazy-load="true" :src="item.img">
 				</view>
@@ -117,7 +117,7 @@
 </script>
 
 <style lang="scss">
-	.box {
+	.box-cub-td-two {
 		margin: 4% auto;
 		width: 210upx;
 		height: 140upx;
@@ -125,7 +125,7 @@
 		perspective: 1000upx;
 	}
 
-	.box-item {
+	.box-item-cub-td-two {
 		width: 100%;
 		height: 100%;
 		position: absolute;
@@ -133,11 +133,11 @@
 		animation: rotation 20s infinite linear;
 	}
 
-	.box-item:hover {
+	.box-item-cub-td-two:hover {
 		animation-play-state: paused;
 	}
 
-	.box-item view {
+	.box-item-cub-td-two view {
 		display: block;
 		position: absolute;
 		width: 220upx;
@@ -149,7 +149,7 @@
 		border: solid 5upx black;
 	}
 
-	.box-item image {
+	.box-item-cub-td-two image {
 		filter: grayscale(0);
 		cursor: pointer;
 		transition: all 0.3s ease 0s;
@@ -157,32 +157,32 @@
 		height: 100%;
 	}
 
-	.box-item image:hover {
+	.box-item-cub-td-two image:hover {
 		filter: grayscale(1);
 		transform: scale(1.2, 1.2);
 	}
 
-	.box-item view:nth-child(1) {
+	.box-item-cub-td-two view:nth-child(1) {
 		transform: rotateY(0deg) translateZ(288upx);
 	}
 
-	.box-item view:nth-child(2) {
+	.box-item-cub-td-two view:nth-child(2) {
 		transform: rotateY(60deg) translateZ(288upx);
 	}
 
-	.box-item view:nth-child(3) {
+	.box-item-cub-td-two view:nth-child(3) {
 		transform: rotateY(120deg) translateZ(288upx);
 	}
 
-	.box-item view:nth-child(4) {
+	.box-item-cub-td-two view:nth-child(4) {
 		transform: rotateY(180deg) translateZ(288upx);
 	}
 
-	.box-item view:nth-child(5) {
+	.box-item-cub-td-two view:nth-child(5) {
 		transform: rotateY(240deg) translateZ(288upx);
 	}
 
-	.box-item view:nth-child(6) {
+	.box-item-cub-td-two view:nth-child(6) {
 		transform: rotateY(300deg) translateZ(288upx);
 	}
 

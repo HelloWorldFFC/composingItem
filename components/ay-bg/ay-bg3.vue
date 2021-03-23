@@ -1,7 +1,7 @@
 <template>
 	<view>
-		<view class="box">
-			<span class="box3">{{title}}</span>
+		<view class="box-bg-three">
+			<span class="box3-bg-three">{{title}}</span>
 			<slot />
 		</view>
 		
@@ -42,7 +42,7 @@
 		background-color: #FFFFFF;
 	}
 
-	.box {
+	.box-bg-three {
 		display: flex;
 		justify-content: center;
 		margin-left: 10px;
@@ -57,7 +57,7 @@
 		--f-color: #fff;
 	}
 
-	.box:nth-child(even) {
+	.box-bg-three:nth-child(even) {
 		margin-right: 4%;
 	}
 
@@ -66,11 +66,11 @@
 			width: 100%
 		}
 
-		.box:nth-child(even) {
+		.box-bg-three:nth-child(even) {
 			margin-right: 0%;
 		}
 	}
-	.box3 {
+	.box3-bg-three {
 		display: inline-block;
 		position: absolute;
 		width: 150px;
@@ -82,13 +82,13 @@
 		top: 20px
 	}
 
-	.box3:before,
-	.box3:after {
+	.box3-bg-three:before,
+	.box3-bg-three:after {
 		content: "";
 		position: absolute;
 	}
 
-	.box3:before {
+	.box3-bg-three:before {
 		height: 0;
 		width: 0;
 		border-bottom: 8px solid black;
@@ -97,7 +97,7 @@
 		left: 0;
 	}
 
-	.box3:after {
+	.box3-bg-three:after {
 		height: 0;
 		width: 0;
 		border-top: 25px solid transparent;

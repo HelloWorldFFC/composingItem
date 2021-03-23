@@ -1,18 +1,18 @@
 <template>
-	<view class="box">
-		<view class="itemBox" v-for="(item, index) in list" :key="index" @click="toDetailPage({index: index,id:item.id})">
+	<view class="box-hItem-one">
+		<view class="itemBox-hItem-one" v-for="(item, index) in list" :key="index" @click="toDetailPage({index: index,id:item.id})">
 			<view v-if="item.img">
 				<image lazy-load=true :src="item.img" style="width: 50upx;height: 50upx;border-radius: 50%;"></image>
 			</view>
 			
 			<!-- #ifdef MP-WEIXIN -->
 			
-			<view  v-if="item.isKefu" class="kefuBtnBox">
+			<view  v-if="item.isKefu" class="kefuBtnBox-hItem-one">
 				<button open-type="contact" @contact="handleContactFun"></button>
 			</view>
 			
 			<!-- #endif -->
-			<view class="name">{{item.name}}</view>
+			<view class="name-hItem-one">{{item.name}}</view>
 			
 			<view v-if="!item.img">
 				<view style="width: 50upx;height: 50upx;border-radius: 50%;"></view>
@@ -77,17 +77,17 @@
 </script>
 
 <style lang="scss">
-	.box {
+	.box-hItem-one {
 		background-color: #FFFFFF;
 		
-		.itemBox {
+		.itemBox-hItem-one {
 			position: relative;
 			display: flex;
 			padding: 18upx 20upx;
 			border-bottom: 2upx solid #EEEEEE;
 			align-items: center;
 	
-			.name {
+			.name-hItem-one {
 				font-size: 34upx;
 				line-height: 60upx;
 				margin-left: 20upx;
@@ -104,18 +104,18 @@
 		}
 	}
 	
-	.kefuBtnBox button::after {
+	.kefuBtnBox-hItem-one button::after {
 		border: none;
 	}
 	
-	.kefuBtnBox {
+	.kefuBtnBox-hItem-one {
 		width: 100%;
 		height: 100%;
 		position: absolute;
 		top: 0;
 		left: 0;
 	}
-	.kefuBtnBox button {
+	.kefuBtnBox-hItem-one button {
 		width: 100%;
 		height: 100%;
 		background-color: #FFFFFF;

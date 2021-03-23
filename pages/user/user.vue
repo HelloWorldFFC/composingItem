@@ -64,6 +64,7 @@
 		},
 		data() {
 			return {
+				isLogin : false,
 				imageUrl: 'https://cdn.pixabay.com/photo/2016/11/23/17/55/beach-1854072__340.jpg',
 				shortcutNavList: [{
 						img: 'https://cdn.pixabay.com/photo/2016/11/23/17/56/decor-1854075__340.jpg',

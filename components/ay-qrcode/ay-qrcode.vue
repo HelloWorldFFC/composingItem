@@ -1,13 +1,17 @@
 <template>
-	<view :class="modal?'show':'hide'">
-		<view style="text-align: center;" :style="{'margin-left':  marginLeft + 'px'}" @longtap="longtapCode">
+	<view :class="modal?'show-qrcode':'hide-qrcode'">
+		<view class="box-qrcode" :style="{'margin-left':  marginLeft + 'px'}" @longtap="longtapCode">
 			<!-- style="width: 550rpx;height: 550rpx;" -->
-			<canvas class="canvas" :style="style_w_h" :canvas-id="qrcode_id">
-				<view v-if="modal&&is_themeImg" :style="style_w_h" class="box-img">
+			
+			<canvas class="canvas-qrcode" :style="style_w_h" :canvas-id="qrcode_id">
+				<!-- #ifndef MP -->
+				<view v-if="modal&&is_themeImg" :style="style_w_h" class="box-img-qrcode">
 					<image :style="style_w_h_img" mode="scaleToFill" :src="themeImg"></image>
 				</view>
+				<!-- #endif -->
 				
 			</canvas>
+			
 			<!-- <image mode="scaleToFill" :src="imagePath"></image> -->
 			
 		</view>
@@ -59,14 +63,11 @@
 				type: String,
 				default: 'https://cdn.pixabay.com/photo/2016/11/29/13/24/balloons-1869816__340.jpg',
 			},
-			height_img: {
+			h_w_img: {
 				type: Number,
 				default: 30
 			},
-			width_img: {
-				type: Number,
-				default: 30
-			},
+			
 			
 		},
 		computed: {
@@ -86,14 +87,14 @@
 			},
 			style_w_h_img() {
 				let that = this;
-				var height = parseInt(that.height_img);
-				var width = parseInt(that.width_img);
+				var height = parseInt(that.h_w_img);
+				var width = parseInt(that.h_w_img);
 				var style = '';
 				if (height > 0) {
 					style = `height:${height*2}rpx;`;
 				}
 				if (width > 0) {
-					style += `width:${width*2}rpx;`;
+					style += `width:${width*2}rpx;z-index: 2;`;
 				}
 			
 				return style;
@@ -120,7 +121,7 @@
 			//     // error
 			// }
 
-			//#ifdef MP-WEIXIN
+			//#ifdef MP
 			//_this.marginLeft = 40;
 			// #endif
 
@@ -133,7 +134,7 @@
 			// 二维码生成工具
 			crtQrCode() {
 				let _this = this;
-				//#ifndef MP-WEIXIN
+				//#ifndef MP
 				new qrCode(_this.qrcode_id, {
 					text: this.url,
 					width: _this.width,
@@ -143,17 +144,17 @@
 					correctLevel: qrCode.CorrectLevel.H,
 				})
 				// #endif
-				//#ifdef MP-WEIXIN
-				_this.createQrCode(this.url, _this.qrcode_id, _this.width, _this.height,_this.themeColor);
+				//#ifdef MP
+				_this.createQrCode(this.url, _this.qrcode_id, _this.width, _this.height,_this.themeColor,_this.is_themeImg,_this.themeImg,_this.h_w_img);
 				// #endif
 
 				//_this.createQrCode(this.url, _this.qrcode_id, _this.width, _this.height);
 			},
-			//#ifdef MP-WEIXIN
+			//#ifdef MP
 
-			createQrCode: function(url, canvasId, cavW, cavH,cavColor) {
+			createQrCode: function(url, canvasId, cavW, cavH,cavColor,haveImg,imgurl,imgsize) {
 				//调用插件中的draw方法，绘制二维码图片
-				qr_we.api.draw(url, canvasId, cavW, cavH,cavColor, this, this.canvasToTempImage);
+				qr_we.api.draw(url, canvasId, cavW, cavH,cavColor,haveImg,imgurl,imgsize, this, this.canvasToTempImage);
 				// setTimeout(() => { this.canvasToTempImage();},100);
 
 			},
@@ -265,30 +266,38 @@
 
 	// 	}
 	// }
-	.canvas {
+	.box-qrcode{
+		text-align: center;
 		position: relative;
-		margin: auto;
-		display: inline-block;
-		margin: auto;
+		.box-img-qrcode{
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			z-index: 2;
+		}
 	}
-	.canvas image{
+	image{
 		width: 60upx;
 		height: 60upx;
 		border-radius: 50%;
+		
 	}
-	.box-img{
-		position: absolute;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+	.canvas-qrcode {
+		
+		margin: auto;
+		display: inline-block;
+		float: left;
 	}
-	.opacity {
+	
+	
+	.opacity-qrcode {
 		opacity: 0;
 		display: block;
 	}
 
-	.show {
+	.show-qrcode {
 		display: block;
 		animation: fade 0.7s;
 
@@ -297,7 +306,7 @@
 		// -o-animation: fade 0.5s;
 	}
 
-	.hide {
+	.hide-qrcode {
 		animation: hide 0.7s;
 	}
 

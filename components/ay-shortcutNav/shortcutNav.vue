@@ -1,7 +1,7 @@
 <template>
-	<view class="box" :style="style" >
+	<view class="box-shctnav" :style="style" >
 
-		<view class="box-item" :style="{width: itemWidth +'%' }" @click="toDetailPage({index: index,id:item.id})" v-for="(item, index) in list"
+		<view class="box-item-shctnav" :style="{width: itemWidth +'%' }" @click="toDetailPage({index: index,id:item.id})" v-for="(item, index) in list"
 		 :key="index">
 			<image lazy-load="true" :src="item.img"></image>
 			<text>{{item.name}}</text>
@@ -103,14 +103,14 @@
 </script>
 
 <style lang="scss">
-	.box {
+	.box-shctnav {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
 		flex-wrap: wrap;
 		padding: 10upx 10upx 20upx 10upx;
 
-		.box-item {
+		.box-item-shctnav {
 			display: flex;
 			flex-direction: column;
 			align-items: center;

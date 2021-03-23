@@ -1,10 +1,10 @@
 <template>
-	<view class="box" v-if="list.length>0">
-		<view class="list">
-			<view class="cc rowup">
+	<view class="box-goup-notic" v-if="list.length>0">
+		<view class="list-goup-notic">
+			<view class="cc rowup-goup-notic">
 				
-				<view class="item" v-for="(item, index) in list"  :key="index">
-					<view class="itemBox">
+				<view class="item-goup-notic" v-for="(item, index) in list"  :key="index">
+					<view class="itemBox-goup-notic">
 						<view class="iconfont icon-tubiaozhizuo-"></view>
 						<view class="directOne1">{{item.directOne1}}</view>
 						<view class="directOne2">{{item.directOne2}}</view>
@@ -13,7 +13,7 @@
 				
 			</view>
 		</view>
-		<view class="more">
+		<view class="more-goup-notic">
 			<view class="iconfont icon-tubiaozhizuo-" style="font-size: 52upx;" :style="{color: themeColor }" v-if="haveMore"></view>
 			<view class="iconfont icon-you"></view>
 		</view>
@@ -77,7 +77,7 @@
 </script>
 
 <style lang="scss">
-	.box {
+	.box-goup-notic {
 		background-color: #FFFFFF;
 		display: flex;
 		justify-content: center;
@@ -85,7 +85,7 @@
 		padding: 0upx 20upx;
 		border-radius: 22upx;
 	}
-	.itemBox{
+	.itemBox-goup-notic{
 		font-size: 28upx;
 		height: 100%;
 		display: flex;
@@ -107,7 +107,7 @@
 		}
 		
 	}
-	.more {
+	.more-goup-notic {
 		height: 100%;
 		display: flex;
 		justify-content: center;
@@ -137,7 +137,7 @@
 		}
 	}
 
-	.list {
+	.list-goup-notic {
 		width: 100%;
 		// border: 1upx solid #999;
 		margin: 20upx auto;
@@ -147,7 +147,7 @@
 		background-color: #FFFFFF;
 	}
 
-	.list .rowup {
+	.list-goup-notic .rowup-goup-notic {
 		-webkit-animation: 10s rowup linear infinite normal;
 		animation: 10s rowup linear infinite normal;
 		position: relative;
